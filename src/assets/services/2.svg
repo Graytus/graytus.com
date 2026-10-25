@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="940" viewBox="0 0 1680 940" role="img" aria-labelledby="title desc">
+<title id="title">OTA Listing Platforms</title>
+<desc id="desc">Agoda, Booking.com, MakeMyTrip, Goibibo, Expedia, Hotels.com, Trip.com, Vrbo and Airbnb connected to OTA Listing Platforms.</desc>
+<defs>
+  <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#EDF3F9"/><stop offset="1" stop-color="#E5EFF8"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="9" stdDeviation="12" flood-color="#183A60" flood-opacity=".12"/></filter>
+  <linearGradient id="hub" x2="1" y2="1"><stop stop-color="#164C86"/><stop offset="1" stop-color="#0D315C"/></linearGradient>
+  <style>
+    .brand{font-family:Inter,Arial,sans-serif;font-size:29px;font-weight:700;letter-spacing:-.7px;text-anchor:middle;dominant-baseline:middle}
+    .bubble{fill:#fff;stroke:#d5e5f2;stroke-width:2}
+    .link{stroke:#73b9ed;stroke-width:4;fill:none;stroke-linecap:round;opacity:.9}
+  </style>
+</defs>
+<rect width="1680" height="940" fill="url(#bg)"/>
+<!-- fine, quiet background accents -->
+<circle cx="140" cy="130" r="90" fill="#dbeaf6" opacity=".22"/><circle cx="1530" cy="790" r="135" fill="#d7e9f7" opacity=".2"/>
+<!-- connections -->
+<g class="link">
+ <path d="M700 345 Q625 290 556 245"/><path d="M795 292 Q785 250 778 216"/><path d="M900 295 Q930 250 970 221"/>
+ <path d="M986 375 Q1060 338 1112 316"/><path d="M1002 470 Q1070 482 1130 487"/><path d="M948 567 Q1010 620 1060 663"/>
+ <path d="M820 617 Q810 660 800 705"/><path d="M690 566 Q624 615 568 655"/><path d="M652 462 Q585 474 532 492"/>
+</g>
+<g fill="#73b9ed">
+ <path d="M550 239l16-4-7 15z"/><path d="M778 210l-10 14 18-1z"/><path d="M975 216l-16-5 6 16z"/>
+ <path d="M1118 313l-16-6 5 17z"/><path d="M1137 488l-15-9-1 18z"/><path d="M1067 669l-3-18-13 12z"/>
+ <path d="M798 711l-10-14 18 0z"/><path d="M562 660l15-9-2 18z"/><path d="M526 493l15-9 0 18z"/>
+</g>
+<!-- platform bubbles -->
+<g filter="url(#shadow)">
+ <circle class="bubble" cx="500" cy="210" r="91"/><circle class="bubble" cx="780" cy="170" r="91"/><circle class="bubble" cx="1010" cy="205" r="91"/>
+ <circle class="bubble" cx="1160" cy="320" r="91"/><circle class="bubble" cx="1190" cy="500" r="91"/><circle class="bubble" cx="1075" cy="675" r="91"/>
+ <circle class="bubble" cx="800" cy="735" r="91"/><circle class="bubble" cx="545" cy="675" r="91"/><circle class="bubble" cx="480" cy="495" r="91"/>
+</g>
+<!-- central hub -->
+<g filter="url(#shadow)"><circle cx="820" cy="460" r="162" fill="url(#hub)"/><circle cx="820" cy="460" r="150" fill="none" stroke="#ffffff" stroke-opacity=".2" stroke-width="2"/></g>
+<text x="820" y="430" text-anchor="middle" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="35" font-weight="500" letter-spacing="2">OTA LISTING</text>
+<text x="820" y="483" text-anchor="middle" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="43" font-weight="800" letter-spacing="1">PLATFORMS</text>
+<path d="M755 516h130" stroke="#83c8f5" stroke-width="4" stroke-linecap="round"/>
+<!-- platform wordmarks, typeset cleanly for reliable rendering -->
+<text class="brand" x="500" y="204" fill="#404347" font-size="30">agoda</text><g transform="translate(454 233)"><circle r="7" fill="#e94451"/><circle cx="23" r="7" fill="#f4b42c"/><circle cx="46" r="7" fill="#57a967"/><circle cx="69" r="7" fill="#8264aa"/><circle cx="92" r="7" fill="#398cc6"/></g>
+<text class="brand" x="780" y="172"><tspan fill="#003b95">Booking</tspan><tspan fill="#009fe3">.com</tspan></text>
+<text class="brand" x="1010" y="204" font-size="25"><tspan fill="#142d57">make</tspan><tspan fill="#e31e24"> my </tspan><tspan fill="#142d57">trip</tspan></text>
+<text class="brand" x="1160" y="320" font-size="30"><tspan fill="#ee6b22">go</tspan><tspan fill="#2957a4">ibibo</tspan></text>
+<text class="brand" x="1190" y="500" font-size="28"><tspan fill="#092f60">Expedia</tspan><tspan fill="#f2bd32">.</tspan></text>
+<text class="brand" x="1075" y="670" font-size="27"><tspan fill="#d9272e">Hotels</tspan><tspan fill="#27313d">.com</tspan></text>
+<text class="brand" x="800" y="735" font-size="31"><tspan fill="#1156a8">trip</tspan><tspan fill="#ec6826">.com</tspan></text>
+<text class="brand" x="545" y="675" fill="#3158aa" font-family="Georgia,serif" font-style="italic" font-size="39">Vrbo</text>
+<text class="brand" x="480" y="495" font-size="31"><tspan fill="#ff5a63">air</tspan><tspan fill="#ff5a63">bnb</tspan></text>
+</svg>

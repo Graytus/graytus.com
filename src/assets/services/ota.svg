@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="960" viewBox="360 -10 960 960" role="img">
+<title>OTA Listing Platforms</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#EEF4FA"/>
+  <stop offset="50%" stop-color="#E2EDF7"/>
+  <stop offset="100%" stop-color="#D7E7F5"/>
+</linearGradient>
+<linearGradient id="hub" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#1E5B9E"/>
+  <stop offset="100%" stop-color="#0B2A52"/>
+</linearGradient>
+<linearGradient id="hubGlow" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.6"/>
+  <stop offset="100%" stop-color="#0284C7" stop-opacity="0"/>
+</linearGradient>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+  <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#183A60" flood-opacity=".15"/>
+</filter>
+<filter id="hubShadow" x="-30%" y="-30%" width="160%" height="170%">
+  <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0F2D52" flood-opacity=".25"/>
+</filter>
+<style>
+  .bubble { fill: #ffffff; stroke: #d3e4f2; stroke-width: 2.2; }
+  .brand { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; font-size: 20px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; letter-spacing: -0.4px; }
+  .link { stroke: #60a5fa; stroke-width: 3.5; fill: none; stroke-linecap: round; opacity: 0.9; }
+</style>
+</defs>
+
+<!-- Card Backdrop -->
+<rect x="360" y="-10" width="960" height="960" rx="36" fill="url(#bg)" stroke="#cfe0ef" stroke-width="1.5"/>
+
+<!-- Ambient Decorative Circles -->
+<circle cx="450" cy="80" r="100" fill="#cde3f7" opacity=".4"/>
+<circle cx="1230" cy="80" r="90" fill="#cde3f7" opacity=".35"/>
+<circle cx="440" cy="860" r="95" fill="#cde3f7" opacity=".35"/>
+<circle cx="1230" cy="860" r="110" fill="#c4def5" opacity=".4"/>
+
+<!-- Orbital Decorative Tech Rings -->
+<circle cx="840" cy="470" r="380" fill="none" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="6 8" opacity=".22"/>
+<circle cx="840" cy="470" r="290" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5 7" opacity=".3"/>
+<circle cx="840" cy="470" r="210" fill="none" stroke="#60a5fa" stroke-width="1.2" stroke-dasharray="4 6" opacity=".35"/>
+
+<!-- Connector Lines -->
+<g class="link">
+  <path d="M840.0 320.0 L840.0 205.0"/>
+  <path d="M936.4 355.1 L1010.3 267.0"/>
+  <path d="M987.7 444.0 L1101.0 424.0"/>
+  <path d="M969.9 545.0 L1069.5 602.5"/>
+  <path d="M891.3 611.0 L930.6 719.0"/>
+  <path d="M788.7 611.0 L749.4 719.0"/>
+  <path d="M710.1 545.0 L610.5 602.5"/>
+  <path d="M692.3 444.0 L579.0 424.0"/>
+  <path d="M743.6 355.1 L669.7 267.0"/>
+</g>
+
+<!-- OTA Channel Node Bubbles -->
+<g filter="url(#shadow)">
+  <circle class="bubble" cx="840.0" cy="125.0" r="80"/>
+  <circle class="bubble" cx="1061.8" cy="205.7" r="80"/>
+  <circle class="bubble" cx="1179.8" cy="410.1" r="80"/>
+  <circle class="bubble" cx="1138.8" cy="642.5" r="80"/>
+  <circle class="bubble" cx="958.0" cy="794.2" r="80"/>
+  <circle class="bubble" cx="722.0" cy="794.2" r="80"/>
+  <circle class="bubble" cx="541.2" cy="642.5" r="80"/>
+  <circle class="bubble" cx="500.2" cy="410.1" r="80"/>
+  <circle class="bubble" cx="618.2" cy="205.7" r="80"/>
+</g>
+
+<!-- Central Hub -->
+<g filter="url(#hubShadow)">
+  <circle cx="840" cy="470" r="150" fill="url(#hub)"/>
+  <circle cx="840" cy="470" r="142" fill="none" stroke="url(#hubGlow)" stroke-width="3"/>
+  <circle cx="840" cy="470" r="138" fill="none" stroke="#ffffff" stroke-opacity=".25" stroke-width="1.5"/>
+</g>
+
+<!-- Central Text -->
+<text x="840" y="438" text-anchor="middle" fill="#93c5fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="2.5">OTA LISTING</text>
+<text x="840" y="488" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="38" font-weight="900" letter-spacing="1">PLATFORMS</text>
+<path d="M765 516h150" stroke="#38bdf8" stroke-width="4.5" stroke-linecap="round"/>
+
+<!-- Node Brands -->
+<!-- 1. Agoda -->
+<text class="brand" x="840.0" y="123.0" fill="#2d3748" font-size="22" font-weight="800" letter-spacing="-0.3">agoda</text>
+<g transform="translate(796.0 149.0)">
+  <circle cx="0" r="5.5" fill="#e94451"/>
+  <circle cx="22" r="5.5" fill="#f4b42c"/>
+  <circle cx="44" r="5.5" fill="#57a967"/>
+  <circle cx="66" r="5.5" fill="#8264aa"/>
+  <circle cx="88" r="5.5" fill="#398cc6"/>
+</g>
+
+<!-- 2. Booking.com -->
+<text class="brand" x="1061.8" y="205.7" font-size="21"><tspan fill="#003b95" font-weight="800">Booking</tspan><tspan fill="#009fe3" font-weight="800">.com</tspan></text>
+
+<!-- 3. MakeMyTrip -->
+<text class="brand" x="1179.8" y="410.1" font-size="18"><tspan fill="#142d57" font-weight="800">make</tspan><tspan fill="#e31e24" font-weight="800"> my </tspan><tspan fill="#142d57" font-weight="800">trip</tspan></text>
+
+<!-- 4. Goibibo -->
+<text class="brand" x="1138.8" y="642.5" font-size="23" letter-spacing="-0.8"><tspan fill="#ee6b22" font-weight="800">go</tspan><tspan fill="#2957a4" font-weight="800">ibibo</tspan></text>
+
+<!-- 5. Expedia -->
+<text class="brand" x="958.0" y="794.2" font-size="20"><tspan fill="#092f60" font-weight="800">Expedia</tspan><tspan fill="#f2bd32" font-weight="900">.</tspan></text>
+
+<!-- 6. Hotels.com -->
+<text class="brand" x="722.0" y="794.2" font-size="19"><tspan fill="#d9272e" font-weight="800">Hotels</tspan><tspan fill="#27313d" font-weight="800">.com</tspan></text>
+
+<!-- 7. Trip.com -->
+<text class="brand" x="541.2" y="642.5" font-size="22"><tspan fill="#1156a8" font-weight="800">trip</tspan><tspan fill="#ec6826" font-weight="800">.com</tspan></text>
+
+<!-- 8. Vrbo -->
+<text class="brand" x="500.2" y="410.1" fill="#3158aa" font-family="Georgia, serif" font-style="italic" font-weight="800" font-size="30">Vrbo</text>
+
+<!-- 9. Airbnb -->
+<text class="brand" x="618.2" y="205.7" font-size="23"><tspan fill="#ff5a63" font-weight="800">air</tspan><tspan fill="#ff5a63" font-weight="800">bnb</tspan></text>
+</svg>
