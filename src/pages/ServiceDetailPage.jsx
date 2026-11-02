@@ -27,9 +27,13 @@ import {
   GraduationCap, 
   Film,
   Send,
-  Check
+  Check,
+  Briefcase,
+  Dumbbell,
+  Globe,
+  Plane
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import webImg from "../assets/services/web.png";
 import dynamicImg from "../assets/services/dynamic.png";
 import ecommerceImg from "../assets/services/ecommerce.png";
@@ -42,13 +46,17 @@ import otaImg from "../assets/services/ota.svg";
 
 const INDUSTRY_ICON_MAP = {
   Activity: Activity,
-  CreditCard: CreditCard,
-  ShoppingBag: ShoppingBag,
+  Briefcase: Briefcase,
   Building2: Building2,
   Home: Home,
-  Truck: Truck,
+  Dumbbell: Dumbbell,
   GraduationCap: GraduationCap,
-  Film: Film
+  Globe: Globe,
+  Plane: Plane,
+  Film: Film,
+  CreditCard: CreditCard,
+  ShoppingBag: ShoppingBag,
+  Truck: Truck
 };
 
 function formatSlugTitle(slug) {
@@ -413,39 +421,84 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* 6. Centered FAQ Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white border-bottom">
         <div className="container-fluid px-lg-5">
           <div className="row justify-content-center">
-            <div className="col-12 col-lg-8">
-              <div className="text-center mb-4">
-                <div className="badge-pill-tag mb-2">COMMON INQUIRIES</div>
+            <div className="col-12 col-lg-9 col-xl-8">
+              <div className="text-center mb-5">
+                <div className="badge-pill-tag mb-3">COMMON INQUIRIES</div>
                 <h2 className="section-title text-dark">
                   Frequently Asked <span className="text-primary-blue">Questions</span>
                 </h2>
+                <p className="section-subtitle">
+                  Find answers to common questions about our {categoryName.toLowerCase()} capabilities, deliverables, and development process.
+                </p>
               </div>
-              <div className="gt-card p-4 p-md-4 border bg-alt-light rounded-4">
-                <div className="d-flex flex-column gap-3">
-                  {faqs.map((faq, idx) => (
-                    <div key={idx} className="border rounded-3 p-3 bg-white">
+
+              <div className="d-flex flex-column gap-3">
+                {faqs.map((faq, idx) => {
+                  const isOpen = openFaq === idx;
+                  return (
+                    <div
+                      key={idx}
+                      className="border rounded-4 transition-all overflow-hidden"
+                      style={{
+                        borderColor: isOpen ? "#0866C6" : "#E2E8F0",
+                        boxShadow: isOpen ? "0 8px 24px rgba(8, 102, 198, 0.08)" : "none"
+                      }}
+                    >
                       <button
-                        className="btn w-100 text-start p-0 font-weight-bold text-dark d-flex align-items-center justify-content-between border-0 bg-transparent"
-                        onClick={() => setOpenFaq(openFaq === idx ? -1 : idx)}
+                        type="button"
+                        onClick={() => setOpenFaq(isOpen ? -1 : idx)}
+                        className="w-100 p-4 text-start bg-white border-0 d-flex align-items-center justify-content-between gap-3"
+                        style={{ cursor: "pointer" }}
                       >
-                        <span style={{ fontSize: "0.95rem" }}>{faq.q}</span>
-                        <ChevronDown
-                          size={18}
-                          className="text-primary-blue flex-shrink-0 ms-2"
-                          style={{ transform: openFaq === idx ? "rotate(180deg)" : "rotate(0deg)", transition: "0.2s" }}
-                        />
-                      </button>
-                      {openFaq === idx && (
-                        <div className="mt-3 pt-2 border-top small text-secondary">
-                          {faq.a}
+                        <span className="font-weight-bold text-dark mb-0" style={{ fontWeight: 700, fontSize: "1rem" }}>
+                          {faq.q}
+                        </span>
+                        <div
+                          className={`p-2 rounded-circle flex-shrink-0 transition-all ${
+                            isOpen ? "bg-primary-blue text-white" : "bg-light text-secondary"
+                          }`}
+                        >
+                          <ChevronDown
+                            size={18}
+                            style={{
+                              transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                              transition: "transform 0.25s ease"
+                            }}
+                          />
                         </div>
-                      )}
+                      </button>
+
+                      <AnimatePresence>
+                        {isOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25 }}
+                          >
+                            <div
+                              className="px-4 pb-4 pt-1 text-secondary small border-top"
+                              style={{ lineHeight: "1.7", fontSize: "0.92rem", backgroundColor: "#F8FAFC" }}
+                            >
+                              {faq.a}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
-                  ))}
-                </div>
+                  );
+                })}
+              </div>
+
+              {/* Still have questions note */}
+              <div className="text-center mt-4 pt-3">
+                <span className="text-secondary small">Have more questions about our {categoryName.toLowerCase()}? </span>
+                <Link to="/contact" className="text-primary-blue font-weight-bold text-decoration-none small hover-underline">
+                  Speak directly with our team &rarr;
+                </Link>
               </div>
             </div>
           </div>

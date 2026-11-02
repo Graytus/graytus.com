@@ -116,7 +116,7 @@ export default function ProcessSection({ steps, title, subtitle, badge }) {
         }
         .ag-timeline_line {
           width: 3px;
-          background-color: rgba(3, 98, 195, 0.12);
+          background-color: rgba(8, 102, 198, 0.12);
           position: absolute;
           top: 20px;
           left: 50%;
@@ -127,8 +127,8 @@ export default function ProcessSection({ steps, title, subtitle, badge }) {
         }
         .ag-timeline_line-progress {
           width: 100%;
-          background: linear-gradient(180deg, #0362C3 0%, #00C49F 100%);
-          box-shadow: 0 0 10px rgba(3, 98, 195, 0.6);
+          background: linear-gradient(180deg, #0866C6 0%, #00C49F 100%);
+          box-shadow: 0 0 10px rgba(8, 102, 198, 0.6);
           transition: height 0.1s linear;
         }
         .ag-timeline_item {
@@ -164,8 +164,8 @@ export default function ProcessSection({ steps, title, subtitle, badge }) {
           margin: 0 -20px 0 14px;
         }
         .js-ag-active .ag-timeline-card_point-box {
-          border-color: #0362C3 !important;
-          box-shadow: 0 0 15px rgba(3, 98, 195, 0.5);
+          border-color: #0866C6 !important;
+          box-shadow: 0 0 15px rgba(8, 102, 198, 0.5);
           transform: scale(1.2);
         }
         .ag-timeline-card_point {
@@ -176,7 +176,7 @@ export default function ProcessSection({ steps, title, subtitle, badge }) {
           transition: all 0.4s ease;
         }
         .js-ag-active .ag-timeline-card_point {
-          background-color: #0362C3;
+          background-color: #0866C6;
         }
         .ag-timeline-card_meta-box {
           display: inline-block;
@@ -188,7 +188,7 @@ export default function ProcessSection({ steps, title, subtitle, badge }) {
           transition: color 0.4s ease;
         }
         .js-ag-active .ag-timeline-card_meta {
-          color: #0362C3;
+          color: #0866C6;
         }
         /* Exact JPLoft Fly-In Card Animations */
         .ag-timeline-card_item {
@@ -214,15 +214,15 @@ export default function ProcessSection({ steps, title, subtitle, badge }) {
         .js-ag-active.ag-timeline_item:nth-child(odd) .ag-timeline-card_item {
           opacity: 1;
           transform: translateX(0);
-          border-color: #0362C3;
-          box-shadow: 0 15px 35px rgba(3, 98, 195, 0.12);
+          border-color: #0866C6;
+          box-shadow: 0 15px 35px rgba(8, 102, 198, 0.12);
         }
         .ag-timeline-card_arrow {
           height: 16px;
           width: 16px;
           background-color: #ffffff;
-          border-left: 1px solid #0362C3;
-          border-bottom: 1px solid #0362C3;
+          border-left: 1px solid #0866C6;
+          border-bottom: 1px solid #0866C6;
           z-index: 2;
           position: absolute;
           top: 24px;
@@ -249,15 +249,15 @@ export default function ProcessSection({ steps, title, subtitle, badge }) {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #0362C3;
-          box-shadow: 0 4px 12px rgba(3, 98, 195, 0.08);
+          color: #0866C6;
+          box-shadow: 0 4px 12px rgba(8, 102, 198, 0.08);
           transition: all 0.3s ease;
         }
         .js-ag-active .rang_sec_img {
           background: #EFF6FF;
           border-color: #93C5FD;
-          color: #0362C3;
-          box-shadow: 0 6px 16px rgba(3, 98, 195, 0.16);
+          color: #0866C6;
+          box-shadow: 0 6px 16px rgba(8, 102, 198, 0.16);
           transform: scale(1.05);
         }
         .ag-timeline-card_title {

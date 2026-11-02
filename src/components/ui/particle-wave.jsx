@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
-const ParticleWave = ({ className = '', color = '#0362C3', backgroundColor = '#ffffff', transparent = true }) => {
+const ParticleWave = ({ className = '', color = '#0866C6', backgroundColor = '#ffffff', transparent = true }) => {
   const canvasRef = useRef(null);
   const sceneRef = useRef(null);
 
@@ -30,7 +30,7 @@ const ParticleWave = ({ className = '', color = '#0362C3', backgroundColor = '#f
     }
     return theme === 'dark'
       ? new THREE.Vector3(0.22, 0.74, 0.97) // cyan / white in dark mode
-      : hexToVector3('#0362C3'); // primary blue in light mode
+      : hexToVector3('#0866C6'); // primary blue in light mode
   };
 
   const particleVertex = `

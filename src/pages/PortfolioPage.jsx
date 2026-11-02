@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import portfolioHeroImg from "../assets/portfolio/portfolio.png";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import PortfolioGrid from "../components/PortfolioGrid";
+import CTASection from "../components/CTASection";
+import { BLOG_POSTS } from "../data/blogPosts";
 import {
   ArrowRight,
   ChevronRight,
+  ChevronDown,
   CheckCircle2,
   Code2,
   Layers,
@@ -148,6 +152,31 @@ export default function PortfolioPage() {
     }
   ];
 
+  const [openFaq, setOpenFaq] = useState(0);
+
+  const portfolioFaqs = [
+    {
+      q: "How long does a typical project take from concept to deployment?",
+      a: "Standard corporate websites usually take 3 to 5 weeks, while comprehensive web applications, mobile apps, or custom ERP systems typically range between 6 to 12 weeks depending on features, integrations, and testing scope."
+    },
+    {
+      q: "Do we own the full source code and intellectual property upon delivery?",
+      a: "Yes, 100%. Once project milestones are approved and completed, all source code, design system assets, database schemas, and intellectual property rights are fully transferred to you with zero recurring vendor lock-in."
+    },
+    {
+      q: "Can Graytus build custom workflows not supported by off-the-shelf templates?",
+      a: "Yes. Tailored software engineering is our core specialty. We build custom business logic, secure API integrations, role-based workflows, and database models designed specifically around your operational processes."
+    },
+    {
+      q: "How do you handle confidentiality and Non-Disclosure Agreements (NDAs)?",
+      a: "We execute strict mutual NDAs before reviewing your project scope, ensuring that your proprietary algorithms, product specifications, and business strategies remain 100% confidential."
+    },
+    {
+      q: "What kind of ongoing maintenance and support do you provide after launch?",
+      a: "We offer continuous post-launch SLA support including 24/7 cloud telemetry, automated security patching, performance audits, and scheduled iterative feature releases as your business grows."
+    }
+  ];
+
   return (
     <>
       <SEO
@@ -162,23 +191,31 @@ export default function PortfolioPage() {
         <div className="container-fluid px-lg-5 py-lg-4">
           <div className="row align-items-center g-5">
             {/* Left Column: Heading, Description, Supporting Text, and CTAs */}
-            <div className="col-12 col-lg-7">
+            <div className="col-12 col-lg-6">
               <div className="badge-pill-tag mb-3">
                 <Sparkles size={14} className="text-primary-blue" />
                 <span>OUR WORK / PORTFOLIO</span>
               </div>
 
-              <h1 className="display-4 font-weight-extrabold text-dark mb-3" style={{ letterSpacing: "-0.5px", lineHeight: "1.2" }}>
-                Our Portfolio — <span className="text-primary-blue">Digital Solutions</span> That Drive Business Growth
+              <h1
+                className="display-4 font-weight-extrabold text-dark mb-3"
+                style={{
+                  letterSpacing: "-0.5px",
+                  lineHeight: "1.2",
+                  fontWeight: 700,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif"
+                }}
+              >
+                Our Portfolio — <span className="text-primary-blue">Digital Solutions</span> Built for Business Growth
               </h1>
 
               <p className="lead text-secondary mb-3" style={{ lineHeight: "1.7", fontSize: "1.15rem" }}>
-                Explore our portfolio of web development, mobile app development, custom software, SaaS, ERP, eCommerce, and hospitality solutions. At Graytus Technologies, we create user-friendly digital experiences and scalable technology solutions tailored to business needs.
+                Explore the portfolio of Graytus Technologies, showcasing our expertise in website development, mobile app development, custom software development, SaaS applications, ERP systems, eCommerce websites, and hospitality technology solutions.We build modern, responsive, user-friendly, and scalable digital solutions tailored to business needs. 
               </p>
 
-              <p className="text-secondary mb-4" style={{ lineHeight: "1.7", fontSize: "0.98rem" }}>
+              {/* <p className="text-secondary mb-4" style={{ lineHeight: "1.7", fontSize: "0.98rem" }}>
                 From corporate websites and online stores to enterprise software and hospitality technology, our focus is on thoughtful design, functional development, and business-oriented digital experiences.
-              </p>
+              </p> */}
 
               <div className="d-flex flex-wrap gap-3 mb-4">
                 <a
@@ -218,68 +255,15 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            {/* Right Column: High-Quality Multi-Mockup Composition */}
-            <div className="col-12 col-lg-5">
-              <div className="position-relative mx-auto" style={{ maxWidth: "520px" }}>
-                {/* Main Desktop Web Card */}
-                <div className="bg-white rounded-4 shadow-lg border p-2 overflow-hidden position-relative">
-                  <div className="d-flex align-items-center gap-1 px-2 py-1 mb-1 bg-light rounded-2 border-bottom">
-                    <span className="rounded-circle bg-danger opacity-75" style={{ width: "8px", height: "8px" }}></span>
-                    <span className="rounded-circle bg-warning opacity-75" style={{ width: "8px", height: "8px" }}></span>
-                    <span className="rounded-circle bg-success opacity-75" style={{ width: "8px", height: "8px" }}></span>
-                    <span className="small text-muted ms-2" style={{ fontSize: "0.7rem" }}>graytustechnologies.com/solutions</span>
-                  </div>
-                  <img
-                    src="/images/projects/web.png"
-                    alt="Corporate Web & Software Solutions"
-                    className="w-100 rounded-3 object-fit-cover shadow-sm"
-                    style={{ height: "230px", objectPosition: "top" }}
-                  />
-                </div>
-
-                {/* Overlapping Mobile App Mockup Card */}
-                <div 
-                  className="bg-white rounded-4 shadow-lg border p-2 position-absolute"
-                  style={{
-                    width: "180px",
-                    bottom: "-25px",
-                    left: "-20px",
-                    zIndex: 3
-                  }}
-                >
-                  <div className="d-flex align-items-center justify-content-between px-2 py-1 mb-1 bg-light rounded-2">
-                    <span className="badge bg-primary-blue text-white" style={{ fontSize: "0.6rem" }}>Mobile UI</span>
-                    <Smartphone size={12} className="text-primary-blue" />
-                  </div>
-                  <img
-                    src="/images/projects/mba.png"
-                    alt="Mobile App Development"
-                    className="w-100 rounded-3 object-fit-cover shadow-sm"
-                    style={{ height: "135px", objectPosition: "top" }}
-                  />
-                </div>
-
-                {/* Overlapping SaaS Dashboard Card */}
-                <div 
-                  className="bg-white rounded-4 shadow-lg border p-2 position-absolute"
-                  style={{
-                    width: "210px",
-                    top: "-20px",
-                    right: "-15px",
-                    zIndex: 2
-                  }}
-                >
-                  <div className="d-flex align-items-center justify-content-between px-2 py-1 mb-1 bg-light rounded-2">
-                    <span className="badge bg-dark text-white" style={{ fontSize: "0.6rem" }}>SaaS & ERP</span>
-                    <Cpu size={12} className="text-primary-blue" />
-                  </div>
-                  <img
-                    src="/images/projects/saas.png"
-                    alt="SaaS Platform Development"
-                    className="w-100 rounded-3 object-fit-cover shadow-sm"
-                    style={{ height: "115px", objectPosition: "top" }}
-                  />
-                </div>
+            {/* Right Column: Hero Portfolio Image from assets/portfolio (Enlarged & Transparent) */}
+            <div className="col-12 col-lg-6 text-center">
+              <div className="position-relative mx-auto d-flex align-items-center justify-content-center" style={{ maxWidth: "660px" }}>
+                <img
+                  src={portfolioHeroImg}
+                  alt="Graytus Technologies Portfolio Showcase"
+                  className="w-100 h-auto object-fit-contain border-0 shadow-none bg-transparent"
+                  style={{ maxHeight: "560px" }}
+                />
               </div>
             </div>
           </div>
@@ -301,8 +285,8 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          {/* Interactive Category Filter Tabs and 3-Column Responsive Grid */}
-          <PortfolioGrid showFilters={true} />
+          {/* 3-Column Responsive Grid */}
+          <PortfolioGrid showFilters={false} />
         </div>
       </section>
 
@@ -405,9 +389,43 @@ export default function PortfolioPage() {
       </section>
 
       {/* =========================================================================
-          SECTION 6: OUR DEVELOPMENT PROCESS
+          SECTION 6: OUR DEVELOPMENT PROCESS (RUNNING ANIMATED CARDS)
           ========================================================================= */}
-      <section className="section-padding bg-alt-light border-bottom">
+      <section className="section-padding bg-alt-light border-bottom overflow-hidden position-relative">
+        <style>{`
+          @keyframes processCardsRun {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          .process-cards-marquee-track {
+            display: flex;
+            gap: 24px;
+            width: max-content;
+            animation: processCardsRun 28s linear infinite;
+          }
+          .process-cards-marquee-track:hover {
+            animation-play-state: paused;
+          }
+          .process-running-card {
+            width: 320px;
+            flex: 0 0 320px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1.5px solid #E2E8F0;
+            padding: 28px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+          }
+          .process-running-card:hover {
+            transform: translateY(-6px);
+            border-color: #0866C6;
+            box-shadow: 0 16px 36px rgba(8, 102, 198, 0.12);
+          }
+        `}</style>
         <div className="container-fluid px-lg-5">
           <div className="text-center mb-5">
             <div className="badge-pill-tag mb-3">HOW WE WORK</div>
@@ -415,43 +433,70 @@ export default function PortfolioPage() {
               From Concept <span className="text-primary-blue">to Completion</span>
             </h2>
             <p className="section-subtitle">
-              Our development process focuses on understanding business needs, planning effective solutions, and delivering reliable digital experiences.
+              Our continuous, transparent development workflow engineered to turn ideas into scalable digital products.
             </p>
           </div>
+        </div>
 
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-4 justify-content-center">
-            {processSteps.map((step) => {
+        {/* Continuous Running Cards Container with Edge Gradients */}
+        <div className="position-relative py-3">
+          {/* Edge Blur Fades */}
+          <div 
+            className="position-absolute top-0 bottom-0 start-0 d-none d-md-block" 
+            style={{ 
+              width: "120px", 
+              zIndex: 3, 
+              background: "linear-gradient(to right, #F8FAFC, rgba(248, 250, 252, 0))",
+              pointerEvents: "none" 
+            }} 
+          />
+          <div 
+            className="position-absolute top-0 bottom-0 end-0 d-none d-md-block" 
+            style={{ 
+              width: "120px", 
+              zIndex: 3, 
+              background: "linear-gradient(to left, #F8FAFC, rgba(248, 250, 252, 0))",
+              pointerEvents: "none" 
+            }} 
+          />
+
+          {/* Running Track - Duplicated 3 times for seamless infinite run */}
+          <div className="process-cards-marquee-track">
+            {[...processSteps, ...processSteps, ...processSteps].map((step, idx) => {
               const StepIcon = step.icon;
               return (
-                <div key={step.step} className="col">
-                  {/* Process Card */}
-                  <div className="gt-card p-4 h-100 bg-white rounded-4 border shadow-sm position-relative">
-                    <div className="d-flex align-items-center justify-content-between mb-3">
-                      <span 
-                        className="badge bg-primary-blue text-white px-3 py-2 rounded-pill font-weight-bold"
-                        style={{ fontSize: "0.85rem", letterSpacing: "0.5px" }}
-                      >
-                        {step.step}
-                      </span>
-                      <div 
-                        className="d-inline-flex align-items-center justify-content-center rounded-circle bg-light text-primary-blue"
-                        style={{ width: "40px", height: "40px" }}
-                      >
-                        <StepIcon size={20} />
-                      </div>
+                <div key={idx} className="process-running-card">
+                  <div className="d-flex align-items-center justify-content-between mb-3">
+                    <span 
+                      className="badge bg-primary-blue text-white px-3 py-2 rounded-pill font-weight-bold"
+                      style={{ fontSize: "0.85rem", letterSpacing: "0.5px" }}
+                    >
+                      Step {step.step}
+                    </span>
+                    <div 
+                      className="d-inline-flex align-items-center justify-content-center rounded-circle bg-light text-primary-blue shadow-sm"
+                      style={{ width: "44px", height: "44px" }}
+                    >
+                      <StepIcon size={22} />
                     </div>
-
-                    <h3 className="h5 font-weight-bold text-dark mb-2" style={{ letterSpacing: "-0.2px" }}>
-                      {step.title}
-                    </h3>
-                    <p className="small text-secondary mb-0" style={{ lineHeight: "1.7" }}>
-                      {step.desc}
-                    </p>
                   </div>
+
+                  <h3 className="h5 font-weight-bold text-dark mb-2" style={{ letterSpacing: "-0.2px" }}>
+                    {step.title}
+                  </h3>
+                  <p className="small text-secondary mb-0" style={{ lineHeight: "1.7" }}>
+                    {step.desc}
+                  </p>
                 </div>
               );
             })}
           </div>
+        </div>
+
+        <div className="text-center mt-4">
+          <span className="small text-muted font-weight-medium">
+            💡 Hover over any card to pause the workflow stream
+          </span>
         </div>
       </section>
 
@@ -495,46 +540,130 @@ export default function PortfolioPage() {
             })}
           </div>
 
-          {/* High-Converting Final Conversion CTA Banner */}
-          <div 
-            className="p-5 rounded-4 text-center text-white position-relative overflow-hidden shadow-lg"
-            style={{ 
-              background: "linear-gradient(135deg, #024DA1 0%, #0362C3 100%)",
-              border: "1px solid rgba(255, 255, 255, 0.15)"
-            }}
-          >
-            <div className="position-relative" style={{ zIndex: 2 }}>
-              <span className="badge bg-white text-primary-blue px-3 py-2 rounded-pill font-weight-bold mb-3 d-inline-block shadow-sm">
-                START YOUR PROJECT
-              </span>
-              <h2 className="display-6 font-weight-extrabold text-white mb-3" style={{ letterSpacing: "-0.5px" }}>
-                Ready to Discuss Your Next Technology Project?
+          {/* =========================================================================
+              LATEST ARTICLES SECTION
+              ========================================================================= */}
+          <div className="my-5 pt-3">
+            <div className="d-flex flex-wrap align-items-center justify-content-between mb-4 pb-2 border-bottom">
+              <div>
+                <div className="badge-pill-tag mb-2">RESOURCES & INSIGHTS</div>
+                <h2 className="section-title text-dark mb-0">
+                  Latest <span className="text-primary-blue">Articles</span>
+                </h2>
+              </div>
+              <Link to="/blog" className="btn btn-outline-gt btn-sm d-inline-flex align-items-center gap-1 font-weight-bold">
+                <span>View All Articles</span>
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+
+            <div className="row g-4">
+              {BLOG_POSTS.map((article, idx) => (
+                <div key={article.slug} className="col-12 col-md-6 col-lg-4">
+                  <div className="gt-card h-100 rounded-4 overflow-hidden border bg-white shadow-sm d-flex flex-column hover-lift">
+                    <div className="position-relative overflow-hidden" style={{ height: "220px" }}>
+                      <img
+                        src={article.image}
+                        alt={article.alt || article.title}
+                        className="w-100 h-100 d-block"
+                        style={{ objectFit: "cover" }}
+                      />
+                      <span
+                        className="position-absolute bg-white px-2.5 py-1 rounded-pill small font-weight-bold shadow-sm"
+                        style={{ top: "12px", left: "12px", fontSize: "0.75rem", color: "#0057CC" }}
+                      >
+                        {article.category}
+                      </span>
+                    </div>
+                    <div className="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                      <div>
+                        <div className="text-muted small mb-1">{article.date} • {article.readTime}</div>
+                        <h3 className="h6 font-weight-bold text-dark mb-2 line-clamp-2">
+                          {article.title}
+                        </h3>
+                        <p className="small text-secondary mb-3 line-clamp-2">
+                          {article.description}
+                        </p>
+                      </div>
+                      <div className="pt-2 border-top">
+                        <Link to={`/blog/${article.slug}`} className="text-primary-blue font-weight-bold text-decoration-none d-inline-flex align-items-center gap-1 small">
+                          <span>Read Article</span>
+                          <ArrowRight size={14} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* =========================================================================
+              FREQUENTLY ASKED QUESTIONS SECTION
+              ========================================================================= */}
+          <div className="my-5 pt-3">
+            <div className="text-center mb-5">
+              <div className="badge-pill-tag mb-3">FAQ</div>
+              <h2 className="section-title text-dark">
+                Frequently Asked <span className="text-primary-blue">Questions</span>
               </h2>
-              <p className="lead text-white-50 mx-auto mb-4" style={{ maxWidth: "680px", lineHeight: "1.7" }}>
-                Whether you need a custom corporate website, mobile app, SaaS platform, or enterprise business software, our engineering team is here to assist.
+              <p className="section-subtitle">
+                Clear answers regarding project timelines, source code ownership, customization capabilities, and ongoing support.
               </p>
-              <div className="d-flex justify-content-center gap-3 flex-wrap">
-                <Link
-                  to="/contact"
-                  className="btn bg-white text-primary-blue px-4 py-3 rounded-3 font-weight-bold shadow-sm d-inline-flex align-items-center gap-2 hover-lift"
-                  style={{ fontSize: "1rem", transition: "all 0.25s ease" }}
-                >
-                  <span>Discuss Your Project</span>
-                  <ArrowRight size={18} />
-                </Link>
-                <Link
-                  to="/services"
-                  className="btn btn-outline-light px-4 py-3 rounded-3 font-weight-bold d-inline-flex align-items-center gap-2"
-                  style={{ fontSize: "1rem" }}
-                >
-                  <span>Explore Our Services</span>
-                  <ChevronRight size={18} />
-                </Link>
+            </div>
+
+            <div className="row justify-content-center">
+              <div className="col-12 col-lg-9">
+                <div className="d-flex flex-column gap-3">
+                  {portfolioFaqs.map((faq, idx) => {
+                    const isOpen = openFaq === idx;
+                    return (
+                      <div
+                        key={idx}
+                        className="bg-alt-light border rounded-4 overflow-hidden transition-all shadow-sm"
+                        style={{
+                          borderColor: isOpen ? "#0057CC" : "#E2E8F0"
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="w-100 p-4 text-start bg-transparent border-0 d-flex align-items-center justify-content-between gap-3 text-dark font-weight-bold"
+                          onClick={() => setOpenFaq(isOpen ? null : idx)}
+                          style={{
+                            fontSize: "1.05rem",
+                            cursor: "pointer",
+                            color: isOpen ? "#0057CC" : "#0F172A"
+                          }}
+                        >
+                          <span>{faq.q}</span>
+                          <ChevronDown
+                            size={20}
+                            className="flex-shrink-0 text-primary-blue"
+                            style={{
+                              transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                              transition: "transform 0.25s ease"
+                            }}
+                          />
+                        </button>
+
+                        {isOpen && (
+                          <div className="px-4 pb-4 pt-1 text-secondary border-top" style={{ lineHeight: "1.7", fontSize: "0.95rem" }}>
+                            {faq.a}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
+
+      {/* Quote Banner Section directly above Footer */}
+      <CTASection />
     </>
   );
 }

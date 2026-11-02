@@ -54,13 +54,18 @@ export default function ServiceGrid({ services }) {
     <div className="w-100">
       <div className="row g-4 align-items-stretch">
         {serviceList.map((service, idx) => {
-          const themes = [
-            { primary: "#0362C3", lightTint: "rgba(3, 98, 195, 0.06)", glow: "rgba(3, 98, 195, 0.22)", border: "#0362C3", gradient: "linear-gradient(135deg, #0362C3 0%, #38BDF8 100%)", topicColors: [{ text: "#0284C7", bg: "rgba(2, 132, 199, 0.10)", border: "rgba(2, 132, 199, 0.28)" }, { text: "#2563EB", bg: "rgba(37, 99, 235, 0.10)", border: "rgba(37, 99, 235, 0.28)" }, { text: "#0362C3", bg: "rgba(3, 98, 195, 0.10)", border: "rgba(3, 98, 195, 0.28)" }] },
-            { primary: "#059669", lightTint: "rgba(5, 150, 105, 0.06)", glow: "rgba(5, 150, 105, 0.22)", border: "#059669", gradient: "linear-gradient(135deg, #059669 0%, #34D399 100%)", topicColors: [{ text: "#059669", bg: "rgba(5, 150, 105, 0.10)", border: "rgba(5, 150, 105, 0.28)" }, { text: "#10B981", bg: "rgba(16, 185, 129, 0.10)", border: "rgba(16, 185, 129, 0.28)" }] },
-            { primary: "#7C3AED", lightTint: "rgba(124, 58, 237, 0.06)", glow: "rgba(124, 58, 237, 0.22)", border: "#7C3AED", gradient: "linear-gradient(135deg, #7C3AED 0%, #C084FC 100%)", topicColors: [{ text: "#7C3AED", bg: "rgba(124, 58, 237, 0.10)", border: "rgba(124, 58, 237, 0.28)" }, { text: "#9333EA", bg: "rgba(147, 51, 234, 0.10)", border: "rgba(147, 51, 234, 0.28)" }, { text: "#6366F1", bg: "rgba(99, 102, 241, 0.10)", border: "rgba(99, 102, 241, 0.28)" }] },
-            { primary: "#EA580C", lightTint: "rgba(234, 88, 12, 0.06)", glow: "rgba(234, 88, 12, 0.22)", border: "#EA580C", gradient: "linear-gradient(135deg, #EA580C 0%, #F59E0B 100%)", topicColors: [{ text: "#EA580C", bg: "rgba(234, 88, 12, 0.10)", border: "rgba(234, 88, 12, 0.28)" }, { text: "#D97706", bg: "rgba(217, 119, 6, 0.10)", border: "rgba(217, 119, 6, 0.28)" }] }
-          ];
-          const theme = themes[idx % themes.length];
+          const theme = {
+            primary: "#0866C6",
+            lightTint: "rgba(8, 102, 198, 0.06)",
+            glow: "rgba(8, 102, 198, 0.22)",
+            border: "#0866C6",
+            gradient: "linear-gradient(135deg, #0866C6 0%, #38BDF8 100%)",
+            topicColors: [
+              { text: "#0866C6", bg: "rgba(8, 102, 198, 0.10)", border: "rgba(8, 102, 198, 0.28)" },
+              { text: "#0284C7", bg: "rgba(2, 132, 199, 0.10)", border: "rgba(2, 132, 199, 0.28)" },
+              { text: "#2563EB", bg: "rgba(37, 99, 235, 0.10)", border: "rgba(37, 99, 235, 0.28)" }
+            ]
+          };
           const isActive = hoveredIndex !== null ? hoveredIndex === idx : activeIndex === idx;
           const numberStr = String(idx + 1).padStart(2, "0");
           const categoryPath = `/services/${service.slug || ""}`;
@@ -76,10 +81,10 @@ export default function ServiceGrid({ services }) {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="h-100 rounded-4 p-4 d-flex flex-column justify-content-between position-relative overflow-hidden"
                 style={{
                   minHeight: "410px",
@@ -91,8 +96,9 @@ export default function ServiceGrid({ services }) {
                   backgroundImage: isActive
                     ? `linear-gradient(180deg, ${theme.lightTint} 0%, #ffffff 45%)`
                     : "none",
-                  transform: isActive ? "translateY(-6px)" : "translateY(0)",
-                  transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)"
+                  transform: isActive ? "translateY(-8px)" : "translateY(0)",
+                  transition: "transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-image 0.35s ease",
+                  willChange: "transform, box-shadow"
                 }}
               >
                 {/* Top Accent Gradient Bar for Each Card */}
@@ -115,7 +121,8 @@ export default function ServiceGrid({ services }) {
                         fontWeight: 800,
                         letterSpacing: "-1px",
                         color: isActive ? theme.primary : "#111418",
-                        transition: "color 0.3s ease"
+                        transform: isActive ? "translateY(-2px)" : "translateY(0)",
+                        transition: "color 0.3s ease, transform 0.3s ease"
                       }}
                     >
                       {numberStr}
@@ -216,7 +223,13 @@ export default function ServiceGrid({ services }) {
                     }}
                   >
                     <span>Explore {service.category}</span>
-                    <ArrowRight size={15} />
+                    <ArrowRight
+                      size={15}
+                      style={{
+                        transform: isActive ? "translateX(4px)" : "translateX(0)",
+                        transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)"
+                      }}
+                    />
                   </Link>
                 </div>
               </motion.div>

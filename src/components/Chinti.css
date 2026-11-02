@@ -1,0 +1,557 @@
+/* =========================================================================
+   CHINTI VIRTUAL MASCOT & CHATBOT PANEL STYLES
+   ========================================================================= */
+
+.chinti-container {
+  position: relative;
+  z-index: 1050;
+}
+
+/* ── Floating Mascot Trigger ── */
+.chinti-widget {
+  position: fixed;
+  right: 20px;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  user-select: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.chinti-widget:hover {
+  transform: scale(1.08);
+}
+
+.chinti-widget:focus-visible {
+  outline: 2px solid #0866C6;
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+
+.chinti-greeting {
+  position: relative;
+  padding: 7px 12px;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #164183;
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(8, 102, 198, 0.12);
+  animation: chinti-bubble-float 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.chinti-greeting::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 5px;
+  background: #ffffff;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.chinti-wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: chinti-hand-wave 2s infinite ease-in-out;
+}
+
+.chinti-image {
+  display: block;
+  width: 68px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  animation: chinti-float-wave 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+  transition: filter 0.25s ease;
+  pointer-events: none;
+}
+
+.chinti-widget:hover .chinti-image {
+  filter: drop-shadow(0 10px 22px rgba(8, 102, 198, 0.32));
+}
+
+/* ── Chatbot Panel Window ── */
+.chinti-panel {
+  position: fixed;
+  right: 20px;
+  bottom: calc(130px + env(safe-area-inset-bottom, 0px));
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  height: 500px;
+  max-height: calc(100vh - 150px);
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.22);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1060;
+  animation: chinti-panel-entrance 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes chinti-panel-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header */
+.chinti-panel-header {
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #0866C6 0%, #004B99 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.chinti-header-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chinti-header-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.chinti-header-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chinti-header-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.chinti-header-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.chinti-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #22C55E;
+}
+
+.chinti-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chinti-btn-icon {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.chinti-btn-icon:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Messages Scroll Area */
+.chinti-messages-body {
+  flex: 1;
+  padding: 14px;
+  background: #F8FAFC;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.88rem;
+  outline: none;
+}
+
+.chinti-messages-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chinti-messages-body::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 10px;
+}
+
+.chinti-msg-row {
+  display: flex;
+  flex-direction: column;
+  max-width: 86%;
+}
+
+.chinti-msg-user {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.chinti-msg-bot {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.chinti-bubble {
+  padding: 10px 14px;
+  border-radius: 16px;
+  line-height: 1.5;
+  white-space: pre-line;
+  word-break: break-word;
+  font-size: 0.88rem;
+}
+
+.chinti-msg-user .chinti-bubble {
+  background: #0866C6;
+  color: #ffffff;
+  border-bottom-right-radius: 3px;
+  box-shadow: 0 4px 12px rgba(8, 102, 198, 0.18);
+}
+
+.chinti-msg-bot .chinti-bubble {
+  background: #ffffff;
+  color: #0F172A;
+  border: 1px solid #E2E8F0;
+  border-bottom-left-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.chinti-msg-time {
+  font-size: 0.68rem;
+  color: #94A3B8;
+  margin-top: 3px;
+  padding: 0 4px;
+}
+
+/* Interactive Action Links */
+.chinti-actions-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.chinti-action-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  background: #EFF6FF;
+  color: #0866C6;
+  border: 1px solid #BFDBFE;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.chinti-action-pill:hover {
+  background: #0866C6;
+  color: #ffffff;
+  border-color: #0866C6;
+}
+
+.chinti-action-internship {
+  background: linear-gradient(135deg, #0866C6 0%, #004B99 100%);
+  color: #ffffff;
+  border-color: #0866C6;
+  box-shadow: 0 2px 8px rgba(8, 102, 198, 0.25);
+}
+
+.chinti-action-internship:hover {
+  background: linear-gradient(135deg, #0652A0 0%, #003366 100%);
+  color: #ffffff;
+  border-color: #0652A0;
+  transform: translateY(-1px);
+}
+
+.chinti-action-ext {
+  background: #F0FDF4;
+  color: #16A34A;
+  border-color: #BBF7D0;
+}
+
+.chinti-action-ext:hover {
+  background: #16A34A;
+  color: #ffffff;
+  border-color: #16A34A;
+}
+
+/* Typing Indicator */
+.chinti-typing-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  border-bottom-left-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.chinti-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0866C6;
+  animation: chinti-dot-pulse 1.4s infinite ease-in-out;
+}
+
+.chinti-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.chinti-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes chinti-dot-pulse {
+  0%, 80%, 100% {
+    transform: scale(0.7);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* Quick Options Bar */
+.chinti-quick-options {
+  padding: 8px 12px;
+  background: #ffffff;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chinti-quick-options::-webkit-scrollbar {
+  display: none;
+}
+
+.chinti-quick-btn {
+  padding: 5px 11px;
+  border-radius: 14px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  color: #1E293B;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.chinti-quick-btn:hover {
+  background: #0866C6;
+  color: #ffffff;
+  border-color: #0866C6;
+}
+
+.chinti-quick-btn-highlight {
+  background: #EFF6FF;
+  border-color: #BFDBFE;
+  color: #0866C6;
+  font-weight: 700;
+}
+
+.chinti-quick-btn-highlight:hover {
+  background: #0866C6;
+  color: #ffffff;
+}
+
+.chinti-quick-btn-back {
+  background: #FEF2F2;
+  border-color: #FECACA;
+  color: #DC2626;
+  font-weight: 700;
+}
+
+.chinti-quick-btn-back:hover {
+  background: #DC2626;
+  color: #ffffff;
+  border-color: #DC2626;
+}
+
+/* Message Input Form */
+.chinti-input-form {
+  padding: 10px 12px;
+  background: #ffffff;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chinti-input-field {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  font-size: 0.84rem;
+  color: #0F172A;
+  background: #F8FAFC;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.chinti-input-field:focus {
+  border-color: #0866C6;
+  background: #ffffff;
+}
+
+.chinti-send-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #0866C6;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.chinti-send-btn:hover:not(:disabled) {
+  background: #004B99;
+  transform: scale(1.06);
+}
+
+.chinti-send-btn:disabled {
+  background: #E2E8F0;
+  color: #94A3B8;
+  cursor: not-allowed;
+}
+
+/* ── Animations ── */
+@keyframes chinti-hand-wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(18deg); }
+  20% { transform: rotate(-10deg); }
+  30% { transform: rotate(18deg); }
+  40% { transform: rotate(-6deg); }
+  50% { transform: rotate(12deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes chinti-float-wave {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(2deg);
+  }
+  75% {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes chinti-bubble-float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.03);
+  }
+}
+
+/* ── Mobile Responsive Adaptations ── */
+@media (max-width: 576px) {
+  .chinti-widget {
+    right: 14px;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .chinti-image {
+    width: 52px;
+  }
+
+  .chinti-greeting {
+    padding: 6px 10px;
+    font-size: 10.5px;
+  }
+
+  .chinti-panel {
+    right: 12px;
+    bottom: calc(115px + env(safe-area-inset-bottom, 0px));
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 135px);
+  }
+}
+
+/* ── Reduced Motion Accessibility ── */
+@media (prefers-reduced-motion: reduce) {
+  .chinti-image,
+  .chinti-greeting,
+  .chinti-wave,
+  .chinti-panel,
+  .chinti-dot {
+    animation: none !important;
+    transition: none !important;
+  }
+}

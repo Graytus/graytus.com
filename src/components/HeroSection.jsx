@@ -4,7 +4,7 @@ import { ArrowRight, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPANY_INFO } from "../data/siteData";
 
-// Dynamic rotating services for letter flip animation
+// Dynamic rotating services for badge animation
 const ROTATING_SERVICES = [
   "Website Development",
   "App Development",
@@ -60,29 +60,11 @@ export default function HeroSection() {
 
   const currentService = ROTATING_SERVICES[serviceIdx];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      transition: { staggerChildren: 0.04, delayChildren: 0.04 * i }
-    })
-  };
-
-  const letterVariants = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      transition: { type: "spring", damping: 12, stiffness: 150 }
-    },
-    hidden: { opacity: 0, y: 32, rotateX: -90 }
-  };
-
   return (
     <section
       className="position-relative overflow-hidden py-4 py-lg-5"
       style={{
-        background: "linear-gradient(180deg, #F4F8FF 0%, #EBF3FE 100%)",
+        backgroundColor: "#FFFFFF",
         minHeight: "88vh",
         display: "flex",
         alignItems: "center"
@@ -92,53 +74,127 @@ export default function HeroSection() {
         <div className="row align-items-center g-4">
           <div className="col-12 col-lg-6 col-xl-6">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
+              {/* Badge Tagline with rotating focus */}
               <div className="d-flex align-items-center gap-2 mb-3">
-                <span className="font-weight-extrabold small tracking-widest text-uppercase" style={{ color: "#0362C3", letterSpacing: "2.5px", fontSize: "18px", fontWeight: "700" }}>
+                <span
+                  className="font-weight-extrabold small tracking-widest text-uppercase"
+                  style={{
+                    color: "#0866C6",
+                    letterSpacing: "2.5px",
+                    fontSize: "14px",
+                    fontWeight: "700",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif"
+                  }}
+                >
                   GRAYTUS TECHNOLOGIES
                 </span>
+                <span style={{ color: "#D1D5DB" }}>•</span>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentService}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      color: "#6B7280",
+                      fontSize: "14px",
+                      fontWeight: "500",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif"
+                    }}
+                  >
+                    {currentService}
+                  </motion.span>
+                </AnimatePresence>
               </div>
 
-              <h1 className="display-4 font-weight-extrabold text-dark mb-4" style={{ fontSize: "clamp(2.5rem, 4.5vw, 3.6rem)", lineHeight: "1.18", letterSpacing: "-1.2px", fontWeight: 800, perspective: "1000px" }}>
-                <motion.span variants={containerVariants} initial="hidden" animate="visible" className="d-block">
-                  {"Innovate. Build. Grow.".split("").map((char, i) => (
-                    <motion.span key={i} variants={letterVariants} className="d-inline-block" style={{ whiteSpace: char === " " ? "pre" : "normal" }}>
-                      {char === " " ? "\u00A0" : char}
-                    </motion.span>
-                  ))}
-                </motion.span>
-                <span className="d-block mt-2" style={{ color: "#0362C3", minHeight: "1.25em" }}>
-                  <AnimatePresence mode="wait">
-                    <motion.span key={currentService} initial={{ opacity: 0, y: 25, rotateX: 90 }} animate={{ opacity: 1, y: 0, rotateX: 0 }} exit={{ opacity: 0, y: -25, rotateX: -90 }} transition={{ duration: 0.4, ease: "easeOut" }} className="d-inline-block">
-                      {currentService.split("").map((char, charIdx) => (
-                        <motion.span key={charIdx} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, delay: charIdx * 0.025 }} className="d-inline-block" style={{ whiteSpace: char === " " ? "pre" : "normal" }}>
-                          {char === " " ? "\u00A0" : char}
-                        </motion.span>
-                      ))}
-                    </motion.span>
-                  </AnimatePresence>
+              {/* Main Headline: Bold 700, Desktop 56-64px, Mobile 34-40px */}
+              <h1
+                className="hero-banner-heading mb-4"
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontWeight: 700,
+                  color: "#24282D",
+                  lineHeight: "1.15",
+                  letterSpacing: "-0.02em"
+                }}
+              >
+                <span className="d-block" style={{ color: "#24282D" }}>
+                  Digital Solutions.
+                </span>
+                <span className="d-block mt-1" style={{ color: "#0866C6" }}>
+                  Built for Your Business.
                 </span>
               </h1>
 
-              <p className="lead mb-4" style={{ fontSize: "1.1rem", lineHeight: "1.65", maxWidth: "580px", color: "#000000", fontWeight: "500" }}>
-                At GRAYTUS TECHNOLOGIES, we turn your ideas into innovative, scalable, and user-friendly digital solutions. From modern websites and mobile applications to custom software and cutting-edge technologies, we help businesses build a stronger digital future.
+              {/* Subheading: Regular 400, 18px, grey #6B7280 */}
+              <p
+                className="hero-banner-subheading mb-4"
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "18px",
+                  lineHeight: "1.65",
+                  maxWidth: "580px",
+                  color: "#6B7280"
+                }}
+              >
+                At Graytus Technologies, we turn your ideas into innovative, scalable, and user-friendly digital solutions. From modern websites and mobile applications to custom software and cutting-edge technologies, we help businesses build a stronger digital future.
               </p>
 
+              {/* Buttons: Semi-bold 600, 16px */}
               <div className="d-flex flex-wrap align-items-center gap-3 mb-5">
-                <Link to="/contact" id="hero-start-project-btn" className="btn hero-btn-primary">
+                <Link
+                  to="/contact"
+                  id="hero-start-project-btn"
+                  className="btn hero-btn-primary"
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "16px",
+                    padding: "14px 28px",
+                    backgroundColor: "#0866C6",
+                    borderColor: "#0866C6"
+                  }}
+                >
                   <span>Start Your Project</span>
                   <ArrowRight size={18} />
                 </Link>
-                <Link to="/services" id="hero-explore-services-btn" className="btn hero-btn-explore">
-                  <span className="hero-play-icon-wrap"><Play size={12} fill="currentColor" className="ms-1" /></span>
+                <Link
+                  to="/services"
+                  id="hero-explore-services-btn"
+                  className="btn hero-btn-explore"
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "16px",
+                    padding: "14px 28px",
+                    color: "#24282D",
+                    backgroundColor: "#FFFFFF",
+                    borderColor: "#E5E7EB"
+                  }}
+                >
+                  <span
+                    className="hero-play-icon-wrap"
+                    style={{ backgroundColor: "#0866C6", color: "#FFFFFF" }}
+                  >
+                    <Play size={12} fill="currentColor" className="ms-1" />
+                  </span>
                   <span>Explore Our Services</span>
                 </Link>
               </div>
             </motion.div>
           </div>
 
+          {/* Right Hero Column: Restored Original Image with floating badges */}
           <div className="col-12 col-lg-6 col-xl-6 text-center text-lg-end">
             <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.2 }} className="position-relative d-inline-block w-100">
-              <img src="/images/hero-custom-home.png" alt="Graytus Technologies Building Digital Solutions Forward" className="w-100 h-auto object-fit-contain border-0 shadow-none bg-transparent" style={{ maxHeight: "680px" }} />
+              <img
+                src="/images/hero-custom-home.png"
+                alt="Graytus Technologies Building Digital Solutions Forward"
+                className="w-100 h-auto object-fit-contain border-0 shadow-none bg-transparent"
+                style={{ maxHeight: "680px" }}
+              />
               <div className="position-absolute d-flex flex-column z-3" style={{ top: "39%", left: "1.8%", gap: "9px" }}>
                 <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0 }} className="bg-white d-flex align-items-center justify-content-center" style={{ width: "44px", height: "44px", borderRadius: "12px", boxShadow: "0 8px 20px rgba(0, 0, 0, 0.12)", border: "1px solid rgba(0, 0, 0, 0.08)" }}><ReactIcon /></motion.div>
                 <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} className="bg-white d-flex align-items-center justify-content-center" style={{ width: "44px", height: "44px", borderRadius: "12px", boxShadow: "0 8px 20px rgba(0, 0, 0, 0.12)", border: "1px solid rgba(0, 0, 0, 0.08)" }}><FigmaIcon /></motion.div>

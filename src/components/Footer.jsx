@@ -4,13 +4,13 @@ import Logo from "./Logo";
 import { COMPANY_INFO } from "../data/siteData";
 import { Mail, Phone, MapPin } from "lucide-react";
 
-const ICON_SIZE = 40;
+const ICON_SIZE = 28;
 
 // Social Media Badges matching the user reference design
 const SOCIAL_ITEMS = [
   {
     name: "Instagram",
-    url: COMPANY_INFO.socials.instagram || "https://instagram.com/graytustechnologies",
+    url: COMPANY_INFO.socials.instagram || "https://www.instagram.com/graytustechnologies/",
     icon: (
       <svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -30,28 +30,8 @@ const SOCIAL_ITEMS = [
     )
   },
   {
-    name: "Facebook",
-    url: COMPANY_INFO.socials.facebook || "https://facebook.com/graytustech",
-    icon: (
-      <svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <clipPath id="footer-fb-clip">
-            <circle cx="24" cy="24" r="24" />
-          </clipPath>
-        </defs>
-        <g clipPath="url(#footer-fb-clip)">
-          <circle cx="24" cy="24" r="24" fill="#1877F2" />
-          <path
-            d="M29.5 24.8H25.3V48H19.2V24.8H15.8V19.8H19.2V16.3C19.2 12.5 21.6 10.2 25.8 10.2C27.8 10.2 29.5 10.5 29.5 10.5V14.8H27.3C25.4 14.8 24.8 15.9 24.8 17.3V19.8H29.3L28.7 24.8H29.5Z"
-            fill="#ffffff"
-          />
-        </g>
-      </svg>
-    )
-  },
-  {
     name: "LinkedIn",
-    url: COMPANY_INFO.socials.linkedin || "https://linkedin.com/company/graytus-technologies",
+    url: COMPANY_INFO.socials.linkedin || "https://www.linkedin.com/feed/",
     icon: (
       <svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="24" cy="24" r="24" fill="#0A66C2" />
@@ -90,28 +70,33 @@ const SOCIAL_ITEMS = [
 
 export default function Footer() {
   return (
-    <footer className="pt-5 pb-4 border-top" style={{ backgroundColor: "#f8fafc", borderColor: "#e2e8f0" }}>
+    <footer className="py-4 border-top" style={{ backgroundColor: "#f8fafc", borderColor: "#e2e8f0" }}>
       <div className="container-fluid px-lg-5">
-        <div className="row g-5 pb-5 border-bottom" style={{ borderColor: "#e2e8f0" }}>
+        <div className="row g-4 pb-3">
           {/* Column 1: Brand Logo & Overview */}
           <div className="col-12 col-lg-4">
-            <div className="mb-3">
-              <Logo variant="dark" height={80} />
+            <div className="mb-2">
+              <Logo variant="dark" height={44} />
             </div>
-            <p className="small mb-0" style={{ color: "#475569", lineHeight: "1.7", maxWidth: "340px" }}>
+            <p className="small mb-0" style={{ color: "#475569", lineHeight: "1.6", maxWidth: "340px", fontSize: "0.85rem" }}>
               {COMPANY_INFO.description}
             </p>
           </div>
 
-          {/* Column 2: Company Links */}
+          {/* Column 2: Company Links (Matches Navbar Exactly) */}
           <div className="col-6 col-md-3 col-lg-2">
-            <h6 className="font-weight-extrabold text-uppercase tracking-wider small mb-3" style={{ color: "#0f172a", letterSpacing: "0.5px" }}>
+            <h6 className="font-weight-extrabold text-uppercase tracking-wider small mb-2" style={{ color: "#0f172a", letterSpacing: "0.5px", fontSize: "0.8rem" }}>
               Company
             </h6>
-            <ul className="list-unstyled d-flex flex-column gap-2 mb-0 small">
+            <ul className="list-unstyled d-flex flex-column gap-1 mb-0 small" style={{ fontSize: "0.85rem" }}>
               <li>
-                <Link to="/about" className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
+                <Link to="/" className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
+                  Services
                 </Link>
               </li>
               <li>
@@ -120,13 +105,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/case-studies" className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
-                  Case Studies
+                <Link to="/portfolio" className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
+                  Portfolio
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
-                  Careers
+                <Link to="/blog" className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/internship" className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
+                  Internship
                 </Link>
               </li>
               <li>
@@ -139,10 +129,10 @@ export default function Footer() {
 
           {/* Column 3: Core Services */}
           <div className="col-6 col-md-3 col-lg-3">
-            <h6 className="font-weight-extrabold text-uppercase tracking-wider small mb-3" style={{ color: "#0f172a", letterSpacing: "0.5px" }}>
+            <h6 className="font-weight-extrabold text-uppercase tracking-wider small mb-2" style={{ color: "#0f172a", letterSpacing: "0.5px", fontSize: "0.8rem" }}>
               Core Services
             </h6>
-            <ul className="list-unstyled d-flex flex-column gap-2 mb-0 small">
+            <ul className="list-unstyled d-flex flex-column gap-1 mb-0 small" style={{ fontSize: "0.85rem" }}>
               <li>
                 <Link to="/services/website-development" className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
                   Web Development
@@ -158,32 +148,27 @@ export default function Footer() {
                   Custom Software (ERP/CRM)
                 </Link>
               </li>
-              {/* <li>
-                <Link to="/services/cloud-solutions" className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
-                  Cloud Infrastructure
-                </Link>
-              </li> */}
             </ul>
           </div>
 
           {/* Column 4: Contact Details */}
           <div className="col-12 col-md-6 col-lg-3">
-            <h6 className="font-weight-extrabold text-uppercase tracking-wider small mb-3" style={{ color: "#0f172a", letterSpacing: "0.5px" }}>
+            <h6 className="font-weight-extrabold text-uppercase tracking-wider small mb-2" style={{ color: "#0f172a", letterSpacing: "0.5px", fontSize: "0.8rem" }}>
               Contact
             </h6>
-            <ul className="list-unstyled d-flex flex-column gap-3 mb-0 small">
+            <ul className="list-unstyled d-flex flex-column gap-2 mb-0 small" style={{ fontSize: "0.85rem" }}>
               <li className="d-flex align-items-start gap-2" style={{ color: "#475569" }}>
-                <MapPin size={16} className="text-primary-blue flex-shrink-0 mt-1" />
+                <MapPin size={15} className="text-primary-blue flex-shrink-0 mt-0.5" />
                 <span>{COMPANY_INFO.address}</span>
               </li>
               <li className="d-flex align-items-center gap-2" style={{ color: "#475569" }}>
-                <Mail size={16} className="text-primary-blue flex-shrink-0" />
+                <Mail size={15} className="text-primary-blue flex-shrink-0" />
                 <a href={`mailto:${COMPANY_INFO.email}`} className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
                   {COMPANY_INFO.email}
                 </a>
               </li>
               <li className="d-flex align-items-center gap-2" style={{ color: "#475569" }}>
-                <Phone size={16} className="text-primary-blue flex-shrink-0" />
+                <Phone size={15} className="text-primary-blue flex-shrink-0" />
                 <a href={`tel:${COMPANY_INFO.phone.replace(/[^0-9+]/g, '')}`} className="text-decoration-none hover-blue" style={{ color: "#475569" }}>
                   {COMPANY_INFO.phone}
                 </a>
@@ -192,9 +177,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Centered Social Media Section (Instagram, Facebook, LinkedIn, WhatsApp) */}
-        <div className="py-4 py-md-5 border-bottom text-center" style={{ borderColor: "#e2e8f0" }}>
-          <div className="d-flex align-items-center justify-content-center gap-4 gap-md-5 flex-wrap">
+        {/* Centered Social Media Section (Compact & Sleek) */}
+        <div className="py-2.5 border-bottom text-center" style={{ borderColor: "#e2e8f0" }}>
+          <div className="d-flex align-items-center justify-content-center gap-3 gap-md-4 flex-wrap">
             {SOCIAL_ITEMS.map((item) => (
               <a
                 key={item.name}
@@ -216,11 +201,11 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom Bar */}
-        <div className="pt-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 small" style={{ color: "#64748b" }}>
+        <div className="pt-2.5 d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 small" style={{ color: "#64748b", fontSize: "0.8rem" }}>
           <div>
             © {new Date().getFullYear()} Graytus Technologies. All Rights Reserved.
           </div>
-          <div className="d-flex align-items-center gap-4">
+          <div className="d-flex align-items-center gap-3">
             <Link to="/privacy-policy" className="text-decoration-none hover-blue" style={{ color: "#64748b" }}>
               Privacy Policy
             </Link>

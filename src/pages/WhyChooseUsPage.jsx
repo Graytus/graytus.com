@@ -11,6 +11,7 @@ import {
   INDUSTRIES,
   COMPANY_INFO
 } from "../data/siteData";
+import whyVideo from "../assets/video/v1.mp4";
 import whyImg from "../assets/whchoose/why.png";
 import {
   Zap,
@@ -43,17 +44,25 @@ import {
   HelpCircle,
   Briefcase,
   Rocket,
-  Wallet
+  Wallet,
+  Home,
+  Dumbbell,
+  Plane
 } from "lucide-react";
 
 const INDUSTRY_ICON_MAP = {
+  Building2,
+  Briefcase,
+  Home,
   Activity,
+  Dumbbell,
+  GraduationCap,
+  Globe,
+  Plane,
+  Film,
   CreditCard,
   ShoppingBag,
-  Building2,
   Truck,
-  GraduationCap,
-  Film,
   Layers
 };
 
@@ -181,14 +190,14 @@ export default function WhyChooseUsPage() {
       {/* =========================================================================
           1. HERO SECTION – Why Choose Graytus Technologies?
          ========================================================================= */}
-      <header id="hero-why-choose" className="py-5 border-bottom position-relative overflow-hidden" style={{ backgroundColor: "#f6f9fb" }}>
+      <header id="hero-why-choose" className="py-5 border-bottom position-relative overflow-hidden" style={{ backgroundColor: "#FFFFFF" }}>
         {/* Subtle Background Glow */}
         <div
           className="position-absolute top-0 end-0 rounded-circle"
           style={{
             width: "500px",
             height: "500px",
-            background: "radial-gradient(circle, rgba(3, 98, 195, 0.08) 0%, rgba(3, 98, 195, 0) 70%)",
+            background: "radial-gradient(circle, rgba(8, 102, 198, 0.08) 0%, rgba(8, 102, 198, 0) 70%)",
             filter: "blur(60px)",
             pointerEvents: "none"
           }}
@@ -285,15 +294,23 @@ export default function WhyChooseUsPage() {
                 transition={{ duration: 0.55 }}
                 className="d-flex align-items-center justify-content-center p-2"
               >
-                <img
-                  src={whyImg}
-                  alt="Why Choose Graytus Technologies - Enterprise Software Development"
-                  className="img-fluid"
+                <video
+                  src={whyVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  ref={(el) => {
+                    if (el) {
+                      el.muted = true;
+                      el.play().catch(() => {});
+                    }
+                  }}
+                  className="w-100 h-auto object-fit-contain border-0 shadow-none"
                   style={{
-                    maxHeight: "560px",
-                    width: "auto",
-                    objectFit: "contain",
-                    display: "block"
+                    maxHeight: "540px",
+                    mixBlendMode: "multiply",
+                    backgroundColor: "transparent"
                   }}
                 />
               </motion.div>
@@ -517,7 +534,7 @@ export default function WhyChooseUsPage() {
       <section id="industry-solutions" className="section-padding bg-white border-top border-bottom">
         <div className="container-fluid px-lg-5">
           <div className="text-center mb-5">
-            <div className="badge-pill-tag mb-3">DOMAIN EXPERTISE</div>
+            <div className="badge-pill-tag mb-3">DOMAINS WE SERVE</div>
             <h2 className="section-title text-dark">
               Industry-Specific <span className="text-primary-blue">Digital Solutions</span>
             </h2>
@@ -596,8 +613,8 @@ export default function WhyChooseUsPage() {
                       key={idx}
                       className="border rounded-4 transition-all overflow-hidden"
                       style={{
-                        borderColor: isOpen ? "#0362C3" : "#E2E8F0",
-                        boxShadow: isOpen ? "0 8px 24px rgba(3, 98, 195, 0.08)" : "none"
+                        borderColor: isOpen ? "#0866C6" : "#E2E8F0",
+                        boxShadow: isOpen ? "0 8px 24px rgba(8, 102, 198, 0.08)" : "none"
                       }}
                     >
                       <button

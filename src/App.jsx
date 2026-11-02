@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import Chinti from "./components/Chinti";
 
 // Page Views
 import HomePage from "./pages/HomePage";
@@ -19,6 +20,7 @@ import BlogPostPage from "./pages/BlogPostPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsPage from "./pages/TermsPage";
+import InternshipPage from "./pages/InternshipPage";
 
 export default function App() {
   return (
@@ -45,6 +47,9 @@ export default function App() {
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
 
+            {/* Internship */}
+            <Route path="/internship" element={<InternshipPage />} />
+
             {/* Contact & Legal */}
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
@@ -55,6 +60,8 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        {/* Floating Chinti Mascot & Virtual Assistant Panel */}
+        <Chinti />
       </div>
     </Router>
   );

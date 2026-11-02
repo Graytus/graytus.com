@@ -105,26 +105,52 @@ export default function PortfolioGrid({ limit = null, showFilters = true, initia
                   key={project.id}
                   className="col-12 col-md-6 col-lg-4"
                 >
-                  <div className="gt-card p-0 overflow-hidden h-100 d-flex flex-column justify-content-between border rounded-4 shadow-sm">
+                  <div className="gt-card portfolio-card p-0 overflow-hidden h-100 d-flex flex-column justify-content-between border rounded-4 shadow-sm">
                     {/* Project Screenshot / Thumbnail */}
                     <div 
-                      className="position-relative overflow-hidden bg-light" 
-                      style={{ height: "230px" }}
+                      className="portfolio-thumb-wrap position-relative overflow-hidden bg-dark" 
+                      style={{ height: "340px" }}
                     >
-                      <Link to={serviceUrl} className="d-block w-100 h-100">
+                      <Link to={serviceUrl} className="d-block w-100 h-100 position-relative overflow-hidden d-flex align-items-center justify-content-center">
+                        {/* Ambient Blurred Background when imageFit is contain */}
+                        {project.imageFit === "contain" && (
+                          <div 
+                            className="position-absolute w-100 h-100" 
+                            style={{
+                              backgroundImage: `url(${project.image})`,
+                              backgroundPosition: "center",
+                              backgroundSize: "cover",
+                              filter: "blur(20px) brightness(0.6)",
+                              transform: "scale(1.25)",
+                              inset: 0,
+                              zIndex: 0
+                            }}
+                          />
+                        )}
                         <img
                           src={project.image}
                           alt={`${project.title} - ${project.category}`}
                           loading="lazy"
-                          className="w-100 h-100 object-fit-cover"
+                          className="portfolio-thumb-img w-100 h-100 position-relative"
                           style={{ 
-                            transition: "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
+                            objectFit: project.imageFit || "cover",
                             objectPosition: project.imagePosition || "center",
-                            cursor: "pointer"
+                            cursor: "pointer",
+                            zIndex: 1,
+                            filter: project.imageFit === "contain" ? "drop-shadow(0 6px 14px rgba(0,0,0,0.4))" : "none"
                           }}
-                          onMouseOver={(e) => { e.currentTarget.style.transform = "scale(1.05)"; }}
-                          onMouseOut={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
                         />
+
+                        {/* Subtle Overlay and Text Reveal Animation on Hover */}
+                        <div
+                          className="portfolio-thumb-overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center"
+                          style={{ inset: 0, zIndex: 2 }}
+                        >
+                          <span className="portfolio-thumb-overlay-text badge bg-white text-dark px-3 py-2 rounded-pill font-weight-bold shadow-sm d-inline-flex align-items-center gap-2">
+                            <span>View Details</span>
+                            <ArrowRight size={14} className="text-primary-blue" />
+                          </span>
+                        </div>
                       </Link>
                       
                       {/* Category Label */}

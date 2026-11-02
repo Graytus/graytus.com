@@ -1,19 +1,28 @@
 import corporateWebImg from "../assets/porfolio/web.png";
+import mobileAppImg from "../assets/porfolio/app.png";
+import softwareImg from "../assets/porfolio/software.png";
+import saasImg from "../assets/porfolio/saas.png";
+import ecommerceImg from "../assets/porfolio/ecommerce.png";
+import propertyImg from "../assets/porfolio/property.png";
+import otaImg from "../assets/porfolio/ota.png";
+import erpImg from "../assets/porfolio/erp.png";
+import dynamicImg from "../assets/services/dynamic.png";
+import cloudImg from "../assets/porfolio/cloud.png";
 
 export const COMPANY_INFO = {
   name: "Graytus Technologies",
   tagline: "Building Digital Solutions That Move Businesses Forward",
   description: "We design and develop high-performance websites, mobile applications, custom software, and intelligent digital solutions that help global enterprises and ambitious startups grow.",
   establishedYear: 2020,
-  email: "graytustechnologies@gmail.com",
+  email: "admin@graytustechnologies.com",
   phone: "+91 73586 77780",
   whatsapp: "+917358677780",
-  address: "Vasavi Nagar, No 64/1F, Manalurpet Rd, Kilnakkarai, Tiruvannamalai, Tamil Nadu 606603",
-  workingHours: "Mon - Sat: 9:00 AM - 7:00 PM IST",
+  address: "Vasavi Nagar, No 64/1F, Manalurpet Rd, Kilanaikkarai, Tiruvannamalai, Tamil Nadu 606603",
+  workingHours: "Mon - Sat: 9:30 AM - 6:00 PM",
   socials: {
-    instagram: "https://instagram.com/graytustechnologies",
+    instagram: "https://www.instagram.com/graytustechnologies/",
     facebook: "https://facebook.com/graytustech",
-    linkedin: "https://linkedin.com/company/graytus-technologies",
+    linkedin: "https://www.linkedin.com/feed/",
     whatsapp: "https://wa.me/917358677780",
     twitter: "https://twitter.com/graytustech",
     github: "https://github.com/graytustechnologies"
@@ -455,7 +464,9 @@ export const ALL_SERVICES_DETAILS = {
       "Data-driven predictive insights driving revenue growth"
     ],
     faqs: [
-      { q: "Is our enterprise data safe when using AI models?", a: "Yes. We implement private enterprise endpoints or self-hosted open-source models on your private cloud to ensure zero data retention by external AI providers." }
+      { q: "Is our enterprise data safe when using AI models?", a: "Yes. We implement private enterprise endpoints or self-hosted open-source models on your private cloud to ensure zero data retention by external AI providers." },
+      { q: "What is the difference between RAG and fine-tuning?", a: "RAG (Retrieval-Augmented Generation) connects private documents in real-time to answer domain queries accurately, while fine-tuning alters base model weights for specialized writing style or vocabulary." },
+      { q: "How do you handle AI hallucinations and accuracy?", a: "We apply strict grounding techniques, guardrail verifications, confidence scoring thresholds, and human-in-the-loop review flows for high-stakes business decisions." }
     ]
   },
   "android-app-development": {
@@ -489,7 +500,11 @@ export const ALL_SERVICES_DETAILS = {
       { step: "06", title: "06. Play Store Launch & Maintenance", desc: "We assist with Google Play Store publishing, updates, and ongoing support.", icon: "Rocket" }
     ],
     benefits: ["Access millions of Android users worldwide", "Instant push notification engagement", "Offline data sync and local caching"],
-    faqs: [{ q: "Do you support the latest Android 14/15 features?", a: "Yes, all our apps are built targetting the latest Android SDK versions and Google Play requirements." }]
+    faqs: [
+      { q: "Do you support the latest Android 14/15 features?", a: "Yes, all our apps are built targeting the latest Android SDK versions, Material 3 design systems, and Google Play Store requirements." },
+      { q: "Do you assist with publishing the app on the Google Play Store?", a: "Yes, we handle complete Play Console submission, app signing, store listing optimization, screenshots, and privacy policy compliance." },
+      { q: "How do you ensure the app works smoothly across diverse Android devices?", a: "We run automated and manual QA testing across multiple screen sizes, Android OS versions, and hardware specifications to guarantee consistent performance." }
+    ]
   },
   "flutter-app-development": {
     title: "Flutter App Development Services",
@@ -509,7 +524,11 @@ export const ALL_SERVICES_DETAILS = {
       { step: "03", title: "Dual-Platform Testing", desc: "Simultaneous automated testing on iOS Simulator and Android Emulator." }
     ],
     benefits: ["Up to 50% cost savings compared to separate native apps", "Consistent UI look across all platforms", "Accelerated release velocity"],
-    faqs: [{ q: "Is Flutter suitable for large enterprise applications?", a: "Yes! Major brands like BMW, eBay, and Google trust Flutter for mission-critical mobile applications." }]
+    faqs: [
+      { q: "Is Flutter suitable for large enterprise applications?", a: "Yes! Major brands like BMW, eBay, and Google trust Flutter for mission-critical mobile applications requiring high performance and brand consistency." },
+      { q: "How much time and cost do we save using Flutter?", a: "Because Flutter compiles to both iOS and Android from a single codebase, clients typically save 35% to 50% on engineering hours and maintenance overhead." },
+      { q: "Does Flutter support device hardware features like Bluetooth and GPS?", a: "Yes, Flutter provides native platform channels and robust plugins to interact directly with cameras, Bluetooth, biometric authentication, and geolocation." }
+    ]
   },
   "react-native-development": {
     title: "React Native App Development Services",
@@ -529,7 +548,11 @@ export const ALL_SERVICES_DETAILS = {
       { step: "03", title: "Performance Profiling", desc: "Optimizing render passes and Hermes engine bundle sizes." }
     ],
     benefits: ["Fast time to market", "Unified web and mobile developer talent", "Proven stability used by Meta & Shopify"],
-    faqs: [{ q: "Can React Native handle complex native features?", a: "Yes, any native device feature can be integrated via custom native modules." }]
+    faqs: [
+      { q: "Can React Native handle complex native features?", a: "Yes, any native device feature can be integrated via custom native Swift/Kotlin bridge modules or verified Expo modules." },
+      { q: "Can code be shared between a React web application and React Native mobile app?", a: "Yes, business logic, state management (Redux/Zustand), API hooks, and utility functions can be shared directly across web and mobile codebases." },
+      { q: "How does React Native perform compared to pure native apps?", a: "With modern Hermes JavaScript engine and the new Fabric architecture, React Native delivers smooth 60 FPS animations and instant responsiveness." }
+    ]
   },
   "custom-web-applications": {
     title: "Custom Web Application Services",
@@ -548,7 +571,11 @@ export const ALL_SERVICES_DETAILS = {
       { step: "02", title: "Sprint Coding", desc: "Agile sprints delivering functional software increments every two weeks." }
     ],
     benefits: ["Zero licensing overhead", "Complete proprietary software IP ownership", "Custom integrations with legacy tools"],
-    faqs: [{ q: "Do you build custom internal portals?", a: "Yes, we construct custom admin dashboards, ERPs, CRMs, and operational portals." }]
+    faqs: [
+      { q: "Do you build custom internal portals and admin dashboards?", a: "Yes, we construct bespoke admin dashboards, operational portals, ERPs, and CRMs tailored to your company's exact operational workflows." },
+      { q: "How do you secure user data and role-based permissions?", a: "We implement Role-Based Access Control (RBAC), multi-factor authentication (MFA), encrypted database storage, and OWASP-standard security headers." },
+      { q: "Can custom web applications scale to handle high concurrent traffic?", a: "Yes, our applications are engineered using cloud-native microservices, Redis caching, database indexing, and auto-scaling container configurations." }
+    ]
   },
   "reactjs-development": {
     title: "ReactJS Development Services",
@@ -567,7 +594,11 @@ export const ALL_SERVICES_DETAILS = {
       { step: "02", title: "State Architecture", desc: "Implementing clean centralized state management and API caching." }
     ],
     benefits: ["Sub-second UI interactions", "Highly maintainable code structure", "Thriving community ecosystem"],
-    faqs: [{ q: "Why use ReactJS for web development?", a: "React provides unmatched component reusability, virtual DOM performance, and rich ecosystem tools." }]
+    faqs: [
+      { q: "Why use ReactJS for web development?", a: "React provides unmatched component reusability, virtual DOM performance, vast ecosystem tooling, and smooth reactive user experiences." },
+      { q: "Do you build single-page applications (SPA) or server-rendered apps (SSR)?", a: "We build both high-speed Single Page Applications using Vite/React and SEO-optimized server-rendered platforms using Next.js depending on your project needs." },
+      { q: "How do you maintain code quality and test React applications?", a: "We follow strict modular component architecture, TypeScript typing, ESLint rules, and automated unit and integration tests." }
+    ]
   },
   "hospitality-services": {
     title: "Hospitality Technology Services",
@@ -588,7 +619,11 @@ export const ALL_SERVICES_DETAILS = {
       { step: "02", title: "System Setup", desc: "Connecting API channel managers and setting up custom direct booking widgets." }
     ],
     benefits: ["Higher profit margins with direct bookings", "Eliminate double-booking errors", "Automated guest check-in & communications"],
-    faqs: [{ q: "Can you integrate with our existing hotel PMS?", a: "Yes, we support API integrations with Opera, Cloudbeds, Guesty, and custom PMS systems." }]
+    faqs: [
+      { q: "Can you integrate with our existing hotel PMS?", a: "Yes, we support API integrations with Opera, Cloudbeds, Guesty, and custom PMS systems." },
+      { q: "How does your solution help reduce OTA commission fees?", a: "By deploying a frictionless, mobile-friendly direct booking engine on your website, guests book directly with you, saving 15% to 25% in OTA commissions." },
+      { q: "Is the hospitality software suitable for single properties and chains?", a: "Yes, our systems are multi-property ready, allowing central management of rates, reservations, and analytics across all your locations." }
+    ]
   },
   "ota-listing-management": {
     title: "OTA Listing Management Services",
@@ -615,7 +650,11 @@ export const ALL_SERVICES_DETAILS = {
       { step: "03", title: "03. Listing Goes Live", desc: "We verify the listing details, complete the required platform procedures, and help get the property live and ready to receive bookings.", icon: "Rocket" }
     ],
     benefits: ["Zero double-bookings", "Increased OTA search ranking", "Save hours of manual calendar updates daily"],
-    faqs: [{ q: "Which OTAs do you support?", a: "We support Booking.com, Airbnb, Agoda, Expedia, Vrbo, TripAdvisor, and custom iCal feeds." }]
+    faqs: [
+      { q: "Which OTAs do you support?", a: "We support Booking.com, Airbnb, Agoda, Expedia, Vrbo, TripAdvisor, and custom iCal feeds." },
+      { q: "How do you prevent overbooking and double-booking errors?", a: "Our 2-way real-time calendar synchronization instantly closes dates across all connected platforms the moment a reservation is confirmed on any channel." },
+      { q: "Do you help optimize property descriptions and photos for higher rankings?", a: "Yes, we optimize listing titles, amenities checklists, high-resolution imagery order, and keyword placement to maximize your property's visibility." }
+    ]
   },
   "property-management-system": {
     title: "Property Management",
@@ -642,7 +681,11 @@ export const ALL_SERVICES_DETAILS = {
       { step: "03", title: "Step 03 — Booking Updates", desc: "Inform property owners about new reservations and important booking changes.", icon: "Rocket" }
     ],
     benefits: ["Streamlined front desk operations", "Better guest satisfaction scores", "Clear financial reporting"],
-    faqs: [{ q: "Is the PMS cloud based?", a: "Yes, it is 100% cloud-based and accessible securely from desktop computers, tablets, and smartphones." }]
+    faqs: [
+      { q: "Is the PMS cloud based?", a: "Yes, it is 100% cloud-based and accessible securely from desktop computers, tablets, and smartphones without server installations." },
+      { q: "Can front desk and housekeeping staff have separate access levels?", a: "Yes, our PMS includes granular role-based permissions for front desk, housekeeping, accounting, and managers." },
+      { q: "Can the system generate daily revenue and occupancy reports?", a: "Yes, managers can view real-time occupancy rates, ADR (Average Daily Rate), RevPAR, and export automated financial summaries." }
+    ]
   },
   "direct-hotel-booking-engine": {
     title: "Direct Hotel Booking Engine Solutions",
@@ -661,7 +704,11 @@ export const ALL_SERVICES_DETAILS = {
       { step: "02", title: "Website Integration", desc: "Embedding seamless checkout forms into your hotel site." }
     ],
     benefits: ["Save thousands in OTA commission fees", "Own guest relationship & contact data", "Boost direct brand loyalty"],
-    faqs: [{ q: "How do payments work?", a: "Payments go directly into your merchant account via Stripe, PayPal, or your preferred gateway with zero middleman holding fees." }]
+    faqs: [
+      { q: "How do payments work?", a: "Payments go directly into your merchant account via Stripe, PayPal, Razorpay, or your preferred gateway with zero middleman holding fees." },
+      { q: "Can guests book on mobile phones easily?", a: "Yes, the direct booking widget is engineered specifically for fast, 2-step mobile reservations with instant confirmation emails and SMS." },
+      { q: "Can we offer seasonal discount codes and promo rates?", a: "Yes, you have full control to create promo codes, early bird discounts, minimum night stays, and package bundles." }
+    ]
   },
   "revenue-dynamic-pricing": {
     title: "Revenue & Dynamic Pricing Engine",
@@ -680,7 +727,11 @@ export const ALL_SERVICES_DETAILS = {
       { step: "02", title: "Algorithm Calibration", desc: "Setting floor rates, ceiling prices, and rule triggers." }
     ],
     benefits: ["Up to 20% increase in annual hotel revenue", "Eliminate manual pricing guesswork", "Automatic adjustment for local events"],
-    faqs: [{ q: "Can I set a minimum price threshold?", a: "Yes, you have complete control to set floor prices so room rates never drop below your specified baseline." }]
+    faqs: [
+      { q: "Can I set a minimum price threshold?", a: "Yes, you have complete control to set floor prices and ceiling caps so room rates never drop below your specified baseline." },
+      { q: "How does the dynamic pricing algorithm determine rates?", a: "It factors in current occupancy, days until check-in, historical booking trends, competitor pricing, and local festival/holiday demand." },
+      { q: "Can I manually override automated prices at any time?", a: "Absolutely. You can override individual dates or entire date ranges with one click from your control dashboard." }
+    ]
   }
 };
 
@@ -780,7 +831,8 @@ export const PORTFOLIO_PROJECTS = [
     servicePath: "/services/mobile-app-development",
     badge: "Concept Project",
     client: "Cross-Platform Mobile Architecture Demo",
-    image: "/images/projects/mba.png",
+    image: mobileAppImg,
+    imagePosition: "center",
     description: "User-friendly mobile applications designed around customer needs, business workflows, and required functionality.",
     overview: "A cross-platform mobile application design built to streamline customer onboarding, real-time status updates, and interactive notifications on iOS and Android.",
     clientRequirements: "An intuitive mobile interface providing friction-free user onboarding, biometric login, offline data synchronization, and push notification engagement.",
@@ -803,7 +855,8 @@ export const PORTFOLIO_PROJECTS = [
     servicePath: "/services/custom-software-development",
     badge: "Concept Project",
     client: "Internal Business Operations Demo",
-    image: "/images/projects/c.png",
+    image: softwareImg,
+    imagePosition: "center",
     description: "Tailored software solutions that help businesses organize information and streamline operational workflows.",
     overview: "An enterprise workflow management dashboard engineered to replace manual spreadsheets with automated validation, centralized databases, and role-based access.",
     clientRequirements: "A centralized software portal that streamlines operational handoffs between departments, automates approval workflows, and provides secure audit trails.",
@@ -826,7 +879,8 @@ export const PORTFOLIO_PROJECTS = [
     servicePath: "/services/saas-development",
     badge: "Concept Project",
     client: "Scalable Cloud SaaS Architecture Demo",
-    image: "/images/projects/saas.png",
+    image: saasImg,
+    imagePosition: "center",
     description: "Scalable software platforms built around product requirements, user management, and business workflows.",
     overview: "A production-ready SaaS software platform designed for multi-tenant customer onboarding, subscription management, user workspace isolation, and automated telemetry.",
     clientRequirements: "A secure cloud platform supporting self-service workspace registration, team collaboration, subscription tier enforcement, and external developer webhooks.",
@@ -849,7 +903,8 @@ export const PORTFOLIO_PROJECTS = [
     servicePath: "/services/erp-development",
     badge: "Concept Project",
     client: "Enterprise Resource Management Demo",
-    image: "/images/projects/erp.png",
+    image: erpImg,
+    imagePosition: "center",
     description: "Business management solutions for inventory, sales, operations, reporting, and other required workflows.",
     overview: "A comprehensive ERP software ecosystem unifying procurement, multi-warehouse inventory levels, customer orders, and executive reporting in a single interface.",
     clientRequirements: "An integrated business management platform that eliminates software silos between procurement, warehouse staff, sales managers, and executive leaders.",
@@ -872,7 +927,8 @@ export const PORTFOLIO_PROJECTS = [
     servicePath: "/services/ecommerce-website",
     badge: "Concept Project",
     client: "Modern Digital Commerce Demo",
-    image: "/images/projects/ecommerce.png",
+    image: ecommerceImg,
+    imagePosition: "center",
     description: "Online shopping experiences with product catalogs, responsive interfaces, and suitable checkout integrations.",
     overview: "A high-conversion digital commerce storefront engineered for smooth product discovery, responsive shopping carts, and streamlined multi-step checkout.",
     clientRequirements: "A modern, responsive eCommerce storefront offering dynamic category filters, persistent cart states, and seamless checkout integrations.",
@@ -895,7 +951,8 @@ export const PORTFOLIO_PROJECTS = [
     servicePath: "/services/property-management-system",
     badge: "Concept Project",
     client: "Hospitality Technology Architecture Demo",
-    image: "/images/projects/cad.png",
+    image: propertyImg,
+    imagePosition: "center 30%",
     description: "Hospitality websites, property listing assistance, room information management, and booking-related digital solutions.",
     overview: "A specialized digital platform designed for hotels, resorts, and property operators to manage room listings, showcase amenities, and streamline booking inquiries.",
     clientRequirements: "A professional hospitality web portal enabling property managers to display room specifications, manage seasonal rates, and accept direct booking inquiries.",
@@ -918,7 +975,8 @@ export const PORTFOLIO_PROJECTS = [
     servicePath: "/services/ota-listing-management",
     badge: "Concept Project",
     client: "Hotel & Vacation Rental OTA Sync Demo",
-    image: "/images/projects/cad.png",
+    image: otaImg,
+    imagePosition: "center",
     description: "Multi-platform distribution connecting properties to Booking.com, Airbnb, Agoda, and Expedia in real time.",
     overview: "A specialized hospitality distribution system synchronizing availability calendars, rates, and guest bookings across top global online travel agencies.",
     clientRequirements: "Seamless 2-way OTA synchronization preventing double-bookings, centralizing reservations, and automating room availability updates.",
@@ -941,7 +999,8 @@ export const PORTFOLIO_PROJECTS = [
     servicePath: "/services/dynamic-website",
     badge: "Concept Project",
     client: "Modern Web Application Architecture Demo",
-    image: "/images/projects/dynamic.png",
+    image: cloudImg,
+    imagePosition: "center",
     description: "Interactive cloud web portals with user dashboards, dynamic content management, and responsive interfaces.",
     overview: "A responsive cloud web portal featuring secure member authentication, interactive dashboards, and streamlined content workflows.",
     clientRequirements: "A unified web platform allowing users to access secure dashboards, manage personal profiles, and submit data in real time.",
@@ -955,29 +1014,6 @@ export const PORTFOLIO_PROJECTS = [
       "RESTful API endpoints with structured JSON communication"
     ],
     relatedServices: ["Web Development", "UI/UX Design", "Backend Development"]
-  },
-  {
-    id: "fintech-cloud-platform",
-    title: "Enterprise Financial Processing Suite",
-    category: "Software Development",
-    categoryTag: "Software Development",
-    servicePath: "/services/custom-software-development",
-    badge: "Architecture Concept",
-    client: "Financial Services Architecture Concept",
-    image: "/images/portfolio-fintech.jpg",
-    description: "High-security digital banking and transaction workflow platform engineered for multi-currency operational integrity.",
-    overview: "A secure fintech web application concept demonstrating multi-currency calculation, real-time transaction ledgers, and institutional compliance standards.",
-    clientRequirements: "High-security financial processing architecture with sub-second calculations, encrypted data storage, and strict regulatory compliance.",
-    challenge: "Handling high-concurrency payment data streams while preventing data race conditions and keeping system latency under strict bounds.",
-    solution: "Engineered a microservices backend powered by Node.js, Redis, and PostgreSQL with a React single-page administrative dashboard.",
-    technologies: ["React", "Node.js", "PostgreSQL", "Redis", "AWS", "Docker"],
-    features: [
-      "Multi-currency conversion calculation engine",
-      "Encrypted audit logs with tamper-evident record keeping",
-      "High-speed Redis memory caching for frequent transactions",
-      "Automated financial reconciliation reports"
-    ],
-    relatedServices: ["Software Development", "Cloud Architecture", "Database Solutions"]
   }
 ];
 
@@ -1172,12 +1208,13 @@ export const CLIENT_LOGOS = [
 ];
 
 export const INDUSTRIES = [
-  { name: "Healthcare & Fitness", icon: "Activity", desc: "HIPAA-compliant telehealth, EHR integration & wellness mobile apps." },
-  { name: "FinTech & Banking", icon: "CreditCard", desc: "PCI-DSS compliant e-wallets, payment gateways & banking portals." },
-  { name: "eCommerce & Retail", icon: "ShoppingBag", desc: "High-conversion storefronts, inventory engines & mobile shopping." },
-  { name: "Hospitality & Travel", icon: "Building2", desc: "OTA channel sync, direct booking engines & PMS software." },
-  { name: "Real Estate & PropTech", icon: "Home", desc: "Property listing engines, VR virtual tours & agent management." },
-  { name: "Logistics & Fleet", icon: "Truck", desc: "Real-time GPS tracking, dispatch portals & warehouse inventory." },
-  { name: "Education & EdTech", icon: "GraduationCap", desc: "LMS platforms, interactive video classrooms & student portals." },
-  { name: "Media & Streaming", icon: "Film", desc: "High-throughput audio/video streaming platforms & content portals." }
+  { name: "Hotel", icon: "Building2", desc: "Direct booking engines, OTA channel synchronization, guest portals & custom PMS systems." },
+  { name: "Business", icon: "Briefcase", desc: "Custom CRM/ERP workflows, operations automation, client portals & business software." },
+  { name: "Real Estate", icon: "Home", desc: "Property listing platforms, virtual tours, lead management & agent dashboards." },
+  { name: "Healthcare", icon: "Activity", desc: "Patient appointment scheduling, EHR/EMR integrations, telehealth portals & clinical solutions." },
+  { name: "Fitness Center", icon: "Dumbbell", desc: "Gym membership management, workout tracking apps, trainer scheduling & class booking." },
+  { name: "Education", icon: "GraduationCap", desc: "LMS platforms, student management systems, interactive course portals & online examinations." },
+  { name: "Company Website", icon: "Globe", desc: "High-converting corporate websites, brand storytelling, service architectures & lead funnels." },
+  { name: "Travels", icon: "Plane", desc: "Tour booking systems, itinerary management, holiday packages & integrated travel payment gateways." },
+  { name: "Media", icon: "Film", desc: "High-throughput audio/video streaming, news & editorial CMS platforms, and digital media portals." }
 ];

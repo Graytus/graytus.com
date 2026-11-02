@@ -1,0 +1,687 @@
+/* ============================================================
+   PIXEL-ACCURATE PINTEREST REFERENCE STYLES (EXACT CLONE)
+   Matches reference image:
+   - Primary Purple: #6C5CE7 / #6355E8 / #745DF2
+   - Accent Pink: #FF5B8C / #F43F5E
+   - Lavender Tint Plates: #F1EDFE / #F6F4FF
+   - Dark Text: #1E1B4B / #18181B
+   - Muted Text: #6B7280 / #8E8EA0
+   - Page Canvas: #FFFFFF / #FBFBFE
+   ============================================================ */
+
+.mob-service-page {
+  background-color: #FFFFFF;
+  color: #1E1B4B;
+  min-height: 100vh;
+  padding-bottom: 96px;
+  overflow-x: hidden;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.mob-main-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Top Teaser Banner ── */
+.mob-top-banner-outer {
+  max-width: 1140px;
+  margin: 0 auto 56px;
+  padding: 0 20px;
+}
+
+.mob-top-banner {
+  background: linear-gradient(135deg, #6C5CE7 0%, #5844ED 100%);
+  border-radius: 0 0 32px 32px;
+  padding: 24px 36px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 16px 36px rgba(108, 92, 231, 0.25);
+}
+
+.mob-top-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.mob-top-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  margin-left: -8px;
+  object-fit: cover;
+}
+
+.mob-top-avatar:first-child {
+  margin-left: 0;
+}
+
+.mob-top-plus-badge {
+  background: #FF5B8C;
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #FFFFFF;
+  margin-left: -6px;
+  margin-right: 10px;
+}
+
+/* ── Section Titles ── */
+.mob-ref-title {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.1rem, 3.8vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.8px;
+  color: #1E1B4B;
+}
+
+.mob-purple-span {
+  color: #6C5CE7;
+}
+
+/* ── Section 1: Dashboard, Stats & Features ── */
+.mob-sec1-wrapper {
+  padding: 24px 0 64px;
+}
+
+.mob-dashboard-plate {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Soft tinted plate behind the white dashboard card */
+.mob-plate-backdrop {
+  position: absolute;
+  top: 14px;
+  left: -12px;
+  right: 12px;
+  bottom: -14px;
+  background: #F1EDFE;
+  border-radius: 36px;
+  z-index: 1;
+}
+
+/* Floating purple 3D icon at top-left */
+.mob-tilted-icon {
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #745DF2 0%, #5844ED 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 10px 24px rgba(108, 92, 231, 0.4);
+  transform: rotate(-12deg);
+  z-index: 4;
+}
+
+/* White dashboard card */
+.mob-white-task-card {
+  position: relative;
+  z-index: 2;
+  background: #FFFFFF;
+  border-radius: 28px;
+  box-shadow: 0 20px 48px rgba(108, 92, 231, 0.12);
+  border: 1px solid #ECE8FE;
+  padding: 24px 22px;
+}
+
+.mob-task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-left: 20px;
+}
+
+.mob-task-list-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1E1B4B;
+  margin: 0;
+}
+
+.mob-add-task-btn {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #6C5CE7;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Task row items */
+.mob-ref-task-row {
+  background: #FAF9FE;
+  border: 1px solid #EFEAFD;
+  border-radius: 16px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mob-ref-radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #6C5CE7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mob-ref-radio-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6C5CE7;
+}
+
+.mob-ref-task-text-main {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1E1B4B;
+  line-height: 1.3;
+}
+
+.mob-ref-task-text-sub {
+  font-size: 0.68rem;
+  color: #8E8EA0;
+  line-height: 1.3;
+}
+
+/* Below card widgets: audio bars + avatars */
+.mob-dashboard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  margin-top: 4px;
+}
+
+.mob-audio-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 22px;
+}
+
+.mob-audio-bar {
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #6C5CE7 0%, #FF5B8C 100%);
+}
+
+/* Middle stats */
+.mob-stats-col {
+  padding: 0 16px;
+}
+
+.mob-stat-unit {
+  margin-bottom: 32px;
+}
+
+.mob-stat-unit:last-child {
+  margin-bottom: 0;
+}
+
+.mob-big-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: #1E1B4B;
+  letter-spacing: -1.2px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.mob-stat-sub {
+  font-size: 0.88rem;
+  color: #6B7280;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Right feature list */
+.mob-feature-unit {
+  margin-bottom: 22px;
+}
+
+.mob-feature-unit-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #1E1B4B;
+  margin-bottom: 5px;
+}
+
+.mob-feature-unit-desc {
+  font-size: 0.86rem;
+  color: #6B7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Section 2: Comprehensive Feature Set ── */
+.mob-sec2-wrapper {
+  padding: 64px 0;
+}
+
+.mob-feature-card-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.mob-feature-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: #F1EDFE;
+  color: #6C5CE7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #EAE5FD;
+}
+
+/* Right Layered Showcase */
+.mob-layered-canvas {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mob-canvas-plate-back {
+  position: absolute;
+  inset: 0;
+  background: #F5F2FE;
+  border-radius: 36px;
+  z-index: 1;
+}
+
+.mob-pill-tag-card {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 10px 18px;
+  box-shadow: 0 14px 32px rgba(108, 92, 231, 0.14);
+  border: 1px solid #EAE5FD;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mob-center-overview-card {
+  position: relative;
+  z-index: 2;
+  width: 320px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0 20px 48px rgba(108, 92, 231, 0.16);
+  border: 1px solid #EAE5FD;
+  padding: 24px 20px;
+}
+
+.mob-bottom-badge-card {
+  position: absolute;
+  bottom: 24px;
+  right: 36px;
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 10px 16px;
+  box-shadow: 0 14px 32px rgba(108, 92, 231, 0.14);
+  border: 1px solid #EAE5FD;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Section 3: Large Purple CTA Banner (HIGH PRIORITY) ── */
+.mob-sec3-wrapper {
+  margin: 72px 0 64px;
+}
+
+.mob-banner-box {
+  background: linear-gradient(135deg, #6C5CE7 0%, #5844ED 100%);
+  border-radius: 36px;
+  padding: 56px 44px;
+  position: relative;
+  box-shadow: 0 28px 70px rgba(108, 92, 231, 0.35);
+  color: #FFFFFF;
+  overflow: visible;
+}
+
+/* Phone Mockup Overlapping Top and Bottom */
+.mob-phone-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -65px;
+  margin-bottom: -65px;
+}
+
+.mob-phone-shell {
+  width: 250px;
+  height: 500px;
+  background: #FFFFFF;
+  border: 8px solid #FFFFFF;
+  border-radius: 40px;
+  box-shadow: 
+    0 32px 75px rgba(24, 20, 60, 0.32),
+    0 10px 24px rgba(108, 92, 231, 0.3);
+  transform: rotate(-10deg);
+  animation: mobTiltFloat 6.5s ease-in-out infinite;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes mobTiltFloat {
+  0%, 100% {
+    transform: rotate(-10deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-8deg) translateY(-8px);
+  }
+}
+
+.mob-phone-display {
+  background: #FAF9FE;
+  flex: 1;
+  border-radius: 32px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mob-phone-notch-bar {
+  width: 46px;
+  height: 4px;
+  background: #E2E8F0;
+  border-radius: 4px;
+  margin: 0 auto 12px;
+}
+
+.mob-phone-badge-card {
+  background: #FFFFFF;
+  border-radius: 14px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.08);
+  margin-bottom: 10px;
+}
+
+.mob-phone-bottom-btn {
+  margin-top: auto;
+  background: #6C5CE7;
+  color: #FFFFFF;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(108, 92, 231, 0.35);
+}
+
+/* Banner Right Content */
+.mob-banner-text-box {
+  padding-left: 20px;
+}
+
+.mob-banner-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.6px;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.mob-banner-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 480px;
+  margin-bottom: 26px;
+}
+
+.mob-btn-coral-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #FF5B8C;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 13px 32px;
+  border-radius: 9999px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(255, 91, 140, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.mob-btn-coral-pill:hover {
+  background: #E84576;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(255, 91, 140, 0.55);
+}
+
+/* ── Section 4: Testimonials ── */
+.mob-sec4-wrapper {
+  padding: 56px 0;
+}
+
+.mob-portrait-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Magenta/purple squircle backdrop */
+.mob-squircle-shape {
+  position: absolute;
+  top: 14px;
+  left: -12px;
+  width: 250px;
+  height: 270px;
+  background: #C445FF;
+  border-radius: 34px;
+  z-index: 1;
+}
+
+.mob-celebrate-photo {
+  position: relative;
+  z-index: 2;
+  width: 240px;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* Top floating pill badge */
+.mob-float-trust-pill {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  background: #FFFFFF;
+  border-radius: 9999px;
+  padding: 6px 16px;
+  box-shadow: 0 10px 24px rgba(108, 92, 231, 0.14);
+  border: 1px solid #ECE8FE;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #1E1B4B;
+}
+
+/* Bottom overlapping purple card */
+.mob-float-purple-card {
+  position: absolute;
+  bottom: -20px;
+  right: -24px;
+  background: #5844ED;
+  color: #FFFFFF;
+  border-radius: 20px;
+  padding: 14px 16px;
+  box-shadow: 0 14px 32px rgba(88, 68, 237, 0.4);
+  z-index: 3;
+  width: 180px;
+}
+
+/* Testimonial text */
+.mob-quote-badge-ref {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #F1EDFE;
+  color: #6C5CE7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.mob-quote-body {
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: #374151;
+  font-weight: 500;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+.mob-quote-author-name {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #1E1B4B;
+}
+
+.mob-quote-author-role {
+  font-size: 0.82rem;
+  color: #6B7280;
+}
+
+/* ── Section 5: Blog Showcase ── */
+.mob-sec5-wrapper {
+  padding: 48px 0;
+}
+
+.mob-ref-blog-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #EFEAFD;
+  box-shadow: 0 12px 32px rgba(108, 92, 231, 0.08);
+  padding: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mob-ref-blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(108, 92, 231, 0.16);
+}
+
+.mob-ref-blog-img-box {
+  width: 100%;
+  height: 170px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.mob-ref-blog-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .mob-phone-wrapper {
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+  .mob-banner-text-box {
+    padding-left: 0;
+    text-align: center;
+  }
+  .mob-banner-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mob-top-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .mob-testimonial-portrait-col {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .mob-layered-canvas {
+    min-height: 360px;
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mob-phone-shell {
+    width: 210px;
+    height: 420px;
+  }
+  .mob-banner-box {
+    padding: 36px 22px;
+    border-radius: 28px;
+  }
+  .mob-squircle-shape {
+    width: 200px;
+    height: 230px;
+  }
+  .mob-celebrate-photo {
+    width: 190px;
+    height: 240px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mob-phone-shell {
+    animation: none !important;
+  }
+}

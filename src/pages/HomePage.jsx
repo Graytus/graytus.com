@@ -6,7 +6,6 @@ import ServiceGrid from "../components/ServiceGrid";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";
 import ProcessSection from "../components/ProcessSection";
 import TechnologySection from "../components/TechnologySection";
-import BlogGrid from "../components/BlogGrid";
 import CTASection from "../components/CTASection";
 import { SERVICES_NAV } from "../data/siteData";
 import { Link } from "react-router-dom";
@@ -57,25 +56,6 @@ export default function HomePage() {
 
       {/* Process Section (How We Work) */}
       <ProcessSection />
-
-      {/* Latest Blog Articles */}
-      <section className="section-padding bg-white">
-        <div className="container-fluid px-lg-5">
-          <div className="d-flex flex-column flex-md-row align-items-center justify-content-between mb-5">
-            <div>
-              <div className="badge-pill-tag mb-2">INSIGHTS & NEWS</div>
-              <h2 className="section-title text-dark mb-0">
-                Latest Technology <span className="text-primary-blue">Articles</span>
-              </h2>
-            </div>
-            <Link to="/blog" className="btn btn-outline-gt mt-3 mt-md-0">
-              Read All Articles <ArrowRight size={18} />
-            </Link>
-          </div>
-
-          <BlogGrid limit={3} showFilters={false} />
-        </div>
-      </section>
 
       {/* CTA Section */}
       <CTASection />

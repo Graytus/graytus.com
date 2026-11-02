@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { COMPANY_INFO } from "../data/siteData";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, MessageCircle } from "lucide-react";
 
@@ -9,7 +10,6 @@ export default function ContactForm() {
     phone: "",
     company: "",
     service: "Website Development",
-    budget: "$10,000 - $25,000",
     message: ""
   });
 
@@ -27,13 +27,39 @@ export default function ContactForm() {
       setError("Please fill in all required fields (Name, Email, Message).");
       return;
     }
+
+    // Construct formatted inquiry for WhatsApp
+    const messageLines = [
+      "👋 *New Project Inquiry from Graytus Website*",
+      "",
+      `👤 *Name:* ${formData.name}`,
+      `📧 *Email:* ${formData.email}`,
+      `📞 *Phone:* ${formData.phone || "Not provided"}`,
+      `🏢 *Company:* ${formData.company || "Not provided"}`,
+      `💼 *Service:* ${formData.service}`,
+      "",
+      `📝 *Project Details:*`,
+      formData.message
+    ];
+    const waText = messageLines.join("\n");
+    const waNumber = COMPANY_INFO.whatsapp.replace(/[^0-9]/g, "");
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waText)}`;
+
+    // Open WhatsApp directly
+    window.open(waUrl, "_blank", "noopener,noreferrer");
     setSubmitted(true);
   };
 
   return (
     <div className="row g-5">
       {/* Left: Contact Info & Channels */}
-      <div className="col-12 col-lg-5">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className="col-12 col-lg-5"
+      >
         <div className="pe-lg-4">
           <div className="badge-pill-tag mb-3">GET IN TOUCH</div>
           <h2 className="section-title text-dark">
@@ -112,10 +138,16 @@ export default function ContactForm() {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Right: Interactive Contact Form */}
-      <div className="col-12 col-lg-7">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.65, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        className="col-12 col-lg-7"
+      >
         <div className="gt-card p-4 p-md-5">
           {submitted ? (
             <div className="text-center py-5">
@@ -144,8 +176,8 @@ export default function ContactForm() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="form-control form-control-lg bg-light border-0 fs-6"
-                    placeholder="e.g. John Smith"
+                    className="form-control form-control-lg bg-light fs-6 gt-form-input"
+                    placeholder="Enter your name"
                     required
                   />
                 </div>
@@ -157,8 +189,8 @@ export default function ContactForm() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="form-control form-control-lg bg-light border-0 fs-6"
-                    placeholder="e.g. john@company.com"
+                    className="form-control form-control-lg bg-light fs-6 gt-form-input"
+                    placeholder="Enter your email"
                     required
                   />
                 </div>
@@ -170,8 +202,8 @@ export default function ContactForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="form-control form-control-lg bg-light border-0 fs-6"
-                    placeholder="+1 (555) 000-0000"
+                    className="form-control form-control-lg bg-light fs-6 gt-form-input"
+                    placeholder="Enter phone number"
                   />
                 </div>
 
@@ -182,18 +214,18 @@ export default function ContactForm() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="form-control form-control-lg bg-light border-0 fs-6"
-                    placeholder="e.g. Acquired Logistics Inc."
+                    className="form-control form-control-lg bg-light fs-6 gt-form-input"
+                    placeholder="Enter company name"
                   />
                 </div>
 
-                <div className="col-12 col-md-6">
+                <div className="col-12">
                   <label className="form-label font-weight-bold small text-dark">Service Required</label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="form-select form-select-lg bg-light border-0 fs-6"
+                    className="form-select form-select-lg bg-light fs-6 gt-form-input"
                   >
                     <option value="Website Development">Website Development</option>
                     <option value="Mobile App Development">Mobile App Development</option>
@@ -204,21 +236,6 @@ export default function ContactForm() {
                   </select>
                 </div>
 
-                <div className="col-12 col-md-6">
-                  <label className="form-label font-weight-bold small text-dark">Estimated Budget</label>
-                  <select
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleChange}
-                    className="form-select form-select-lg bg-light border-0 fs-6"
-                  >
-                    <option value="Under $10,000">Under $10,000</option>
-                    <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                    <option value="$25,000 - $50,000">$25,000 - $50,000</option>
-                    <option value="$50,000+">$50,000+</option>
-                  </select>
-                </div>
-
                 <div className="col-12">
                   <label className="form-label font-weight-bold small text-dark">Project Details *</label>
                   <textarea
@@ -226,16 +243,23 @@ export default function ContactForm() {
                     rows="4"
                     value={formData.message}
                     onChange={handleChange}
-                    className="form-control bg-light border-0 fs-6"
+                    className="form-control bg-light fs-6 gt-form-input"
                     placeholder="Tell us about your project goals, timelines, and technical requirements..."
                     required
                   ></textarea>
                 </div>
 
                 <div className="col-12 mt-4">
-                  <button type="submit" className="btn btn-primary-gt w-100 py-3" style={{ fontSize: "1.05rem" }}>
-                    Send Inquiry <Send size={18} />
-                  </button>
+                  <motion.button
+                    type="submit"
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.985 }}
+                    className="btn btn-primary-gt w-100 py-3 contact-submit-btn d-flex align-items-center justify-content-center gap-2"
+                    style={{ fontSize: "1.05rem" }}
+                  >
+                    <span>Send Inquiry</span>
+                    <Send size={18} className="contact-submit-icon" />
+                  </motion.button>
                   <div className="small text-muted text-center mt-2">
                     🔒 We respect your privacy. All inquiries are covered by our NDA policy.
                   </div>
@@ -244,7 +268,7 @@ export default function ContactForm() {
             </form>
           )}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

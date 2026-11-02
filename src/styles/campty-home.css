@@ -1,0 +1,666 @@
+/* ============================================================
+   CAMPTY LANDING PAGE EXACT ANIMATIONS & STYLES
+   Colors:
+   - Primary Accent & Banner: #0056D2 / #005FE6 (Electric Blue)
+   - Dark Headings & Buttons: #181B22
+   - Muted Text: #6B7280
+   - Coral / Peach Highlight: #FF7A59 / #FFA07A
+   ============================================================ */
+
+.campty-landing-page {
+  background-color: #FFFFFF;
+  color: #181B22;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* ── 1. Hero Section ── */
+.campty-hero-section {
+  padding: 56px 0 64px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 20%, rgba(0, 86, 210, 0.04) 0%, transparent 60%);
+}
+
+.campty-sketch-lines {
+  display: inline-block;
+  margin-bottom: 12px;
+  transform-origin: bottom left;
+}
+
+.campty-hero-h1 {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.8rem, 5.2vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.4px;
+  color: #181B22;
+  margin-bottom: 24px;
+}
+
+/* Peach/Coral animated highlight bar under "Good Way!" */
+.campty-highlight-box {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.campty-highlight-underline-anim {
+  position: absolute;
+  bottom: 4px;
+  left: -4px;
+  right: -4px;
+  height: 10px;
+  background-color: #FF8F6B;
+  border-radius: 6px;
+  z-index: -1;
+  opacity: 0.85;
+  transform-origin: left;
+  display: block;
+}
+
+.campty-hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #6B7280;
+  max-width: 460px;
+  margin-bottom: 34px;
+}
+
+.campty-btn-start {
+  background: #181B22;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 14px 38px;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(24, 27, 34, 0.2);
+  transition: all 0.25s ease;
+}
+
+.campty-btn-start:hover {
+  background: #0056D2;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 86, 210, 0.35);
+}
+
+/* Hero Right: Phone Hand Graphic */
+.campty-hero-phone-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.campty-hero-art-bg {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 86, 210, 0.08) 0%, rgba(255, 122, 89, 0.04) 50%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.campty-phone-img-wrapper {
+  position: relative;
+  z-index: 1;
+  animation: camptyFloatSlow 6s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes camptyFloatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.8deg);
+  }
+}
+
+.campty-phone-main-img {
+  width: 310px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 25px 45px rgba(0, 86, 210, 0.16));
+}
+
+/* ── 2. Full-Width Solid Blue Stats Stripe ── */
+.campty-blue-stats-bar {
+  background-color: #0056D2;
+  color: #FFFFFF;
+  padding: 42px 0;
+  margin-bottom: 76px;
+  box-shadow: 0 12px 36px rgba(0, 86, 210, 0.18);
+}
+
+.campty-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.campty-stat-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.campty-stat-text {
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 110px;
+  text-align: left;
+}
+
+.campty-stat-divider {
+  width: 1px;
+  height: 52px;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── 3. Benefits: That The Way To Camp! ── */
+.campty-benefits-section {
+  padding: 0 0 80px;
+}
+
+.campty-sec-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  color: #181B22;
+  margin-bottom: 14px;
+}
+
+.campty-sec-sub {
+  font-size: 0.96rem;
+  color: #6B7280;
+  line-height: 1.65;
+  max-width: 360px;
+}
+
+.campty-benefit-card {
+  text-align: left;
+  padding: 24px 20px;
+  border-radius: 20px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+  height: 100%;
+}
+
+.campty-benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(0, 86, 210, 0.1);
+  border-color: rgba(0, 86, 210, 0.2);
+}
+
+.campty-benefit-icon-wrap {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.campty-benefit-icon-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.campty-benefit-card:hover .campty-benefit-icon-img {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.campty-benefit-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #181B22;
+  margin-bottom: 8px;
+}
+
+.campty-benefit-desc {
+  font-size: 0.88rem;
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+/* ── 4. Map & Destination Finder Section ── */
+.campty-map-section {
+  padding: 20px 0 84px;
+}
+
+.campty-map-search-pill {
+  background: #FFFFFF;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 9999px;
+  padding: 6px 8px 6px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 12px;
+}
+
+.campty-search-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.campty-search-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #0056D2;
+}
+
+.campty-search-val {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #181B22;
+}
+
+.campty-search-divider {
+  width: 1px;
+  height: 32px;
+  background-color: #E5E7EB;
+  margin: 0 16px;
+}
+
+.campty-map-search-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #0056D2;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.campty-map-search-btn:hover {
+  background-color: #0047B3;
+  transform: scale(1.05);
+}
+
+/* World Map Container with Pulsing Pins */
+.campty-world-map-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+  min-height: 340px;
+}
+
+.campty-map-bg-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Radar Pulsing Location Pins */
+.campty-map-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 5;
+}
+
+.campty-pin-core {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0056D2;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.campty-pin-radar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(0, 86, 210, 0.25);
+  animation: pulseRadar 2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes pulseRadar {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.2);
+    opacity: 0;
+  }
+}
+
+.campty-pin-popover {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 8px 14px;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.campty-pin-badge {
+  color: #F59E0B;
+  font-size: 0.76rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.campty-map-pin:hover .campty-pin-popover,
+.campty-map-pin.active .campty-pin-popover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* ── 5. Community Section ── */
+.campty-community-section {
+  padding: 40px 0 84px;
+}
+
+.campty-community-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.campty-community-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Floating speech bubbles */
+.campty-float-bubble {
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 9999px;
+  padding: 8px 18px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #181B22;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.campty-float-bubble.bubble-1 {
+  top: 15%;
+  left: 10%;
+  animation: bubbleFloat1 4.5s ease-in-out infinite;
+}
+
+.campty-float-bubble.bubble-2 {
+  top: 12%;
+  right: 12%;
+  animation: bubbleFloat2 5s ease-in-out infinite;
+}
+
+.campty-float-bubble.bubble-3 {
+  bottom: 18%;
+  left: 20%;
+  animation: bubbleFloat3 4s ease-in-out infinite;
+}
+
+@keyframes bubbleFloat1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes bubbleFloat2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes bubbleFloat3 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ── 6. Testimonials Section ── */
+.campty-testimonials-section {
+  padding: 20px 0 84px;
+}
+
+.campty-carousel-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid #E5E7EB;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #181B22;
+}
+
+.campty-carousel-arrow-btn:hover {
+  background: #0056D2;
+  border-color: #0056D2;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.campty-testimonial-quote-box {
+  padding: 26px 22px;
+  border-radius: 20px;
+  background: #FFFFFF;
+  border: 1px solid #F3F4F6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.campty-testimonial-quote-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.campty-blue-quotes {
+  color: #0056D2;
+  font-family: Georgia, serif;
+  font-size: 2.4rem;
+  line-height: 1;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.campty-quote-para {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 22px;
+  flex: 1;
+}
+
+.campty-client-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.campty-client-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.campty-client-name {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #181B22;
+  margin-bottom: 2px;
+}
+
+.campty-client-role {
+  font-size: 0.78rem;
+  color: #6B7280;
+  margin-bottom: 3px;
+}
+
+/* ── 7. Got A Question / Newsletter & Accordion ── */
+.campty-faq-section {
+  padding: 20px 0 96px;
+}
+
+.campty-newsletter-pill {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1.5px solid #D1D5DB;
+  border-radius: 9999px;
+  padding: 5px 6px 5px 22px;
+  max-width: 400px;
+  margin-top: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.campty-newsletter-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.92rem;
+  color: #181B22;
+  flex: 1;
+}
+
+.campty-btn-submit-pill {
+  background: #181B22;
+  color: #FFFFFF;
+  border: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 11px 26px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.campty-btn-submit-pill:hover {
+  background: #0056D2;
+  transform: translateY(-1px);
+}
+
+/* Accordion FAQ */
+.campty-faq-accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.campty-faq-accordion-item {
+  border-bottom: 1px solid #E5E7EB;
+  padding-bottom: 14px;
+  transition: all 0.2s ease;
+}
+
+.campty-faq-accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+}
+
+.campty-faq-question {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #181B22;
+  transition: color 0.2s ease;
+}
+
+.campty-faq-accordion-header:hover .campty-faq-question {
+  color: #0056D2;
+}
+
+.campty-faq-icon-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.campty-faq-icon-arrow.rotated {
+  transform: rotate(90deg);
+}
+
+.campty-faq-body {
+  overflow: hidden;
+  padding: 6px 0 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .campty-hero-section {
+    padding-top: 36px;
+  }
+  .campty-hero-phone-col {
+    margin-top: 36px;
+  }
+  .campty-stat-divider {
+    display: none;
+  }
+  .campty-stat-item {
+    margin-bottom: 18px;
+  }
+  .campty-map-search-pill {
+    margin-top: 16px;
+  }
+  .campty-world-map-wrapper {
+    min-height: 240px;
+  }
+}
